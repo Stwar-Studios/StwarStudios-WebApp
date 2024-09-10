@@ -39,9 +39,173 @@
     <meta property="og:title" content="Inicio">
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="Inicio.html" data-home-page-title="Inicio" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="es"><header class="u-black u-clearfix u-header u-header" id="sec-1fbb"><div class="u-clearfix u-sheet u-sheet-1">
-        <img class="custom-expanded u-image u-image-contain u-image-default u-image-1" src="images/Logo.png" alt="" data-image-width="324" data-image-height="236">
-        <h5 class="u-align-left u-custom-font u-text u-text-1">STWAR</h5>
+  <style>
+    /* Contenedor principal de logo y nombres */
+    .header-container {
+      display: flex;
+      align-items: center; /* Centrado vertical */
+      justify-content: space-between; /* Espacio entre logo y menú */
+      width: 100%;
+    }
+  
+    /* Contenedor para el logo y nombres de la empresa */
+    .logo-container {
+      display: flex; /* Alinear horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+    }
+  
+    /* Contenedor de nombres de empresa */
+    .company-names {
+      display: flex;
+      flex-direction: column; /* Nombres en columna */
+      margin-left: 15px; /* Espacio entre logo y nombres */
+    }
+  
+    /* Menú hamburguesa a la derecha */
+    .menu-collapse {
+      margin-left: auto; /* Empujar menú hamburguesa hacia la derecha */
+    }
+  
+    /* Clase para texto responsivo */
+    .responsive-text {
+      font-size: 24px !important; /* Tamaño de fuente para pantallas grandes (escritorio) */
+      margin: 0 !important; /* Aseguramos que no haya márgenes adicionales */
+    }
+    .responsive-text-Secondary {
+      font-size: 15px !important; /* Tamaño de fuente para pantallas grandes (escritorio) */
+      margin: 0 !important; /* Aseguramos que no haya márgenes adicionales */
+    }
+    /* Media query para tabletas */
+    @media (max-width: 768px) {
+      .responsive-text {
+        font-size: 20px !important; /* Disminuir tamaño de fuente en tabletas */
+      }
+      .responsive-text-Secondary {
+        font-size: 18px !important; /* Disminuir tamaño de fuente en tabletas */
+      }
+      .logo-container {
+        gap: 10px; /* Ajustar el espacio entre logo y texto en tabletas */
+      }
+    }
+  
+    /* Media query para teléfonos móviles */
+    @media (max-width: 480px) {
+      .responsive-text {
+        font-size: 16px !important; /* Aún más pequeño para pantallas móviles */
+      } 
+       .responsive-text-Secondary {
+        font-size: 14px !important; /* Disminuir tamaño de fuente en tabletas */
+      }
+      .header-container {
+        flex-direction: row; /* Mantener horizontal el logo y nombres */
+        align-items: center; /* Centrado vertical */
+      }
+      .menu-collapse {
+        display: block; /* Asegura que el menú hamburguesa sea visible */
+      }
+    }
+  
+    /* Clase para imágenes responsivas */
+    .responsive-image {
+      width: 140px !important; /* Tamaño del logo para pantallas grandes */
+    }
+  
+    @media (max-width: 768px) {
+      .responsive-image {
+        width: 120px !important; /* Tamaño del logo para tabletas */
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .responsive-image {
+        width: 100px !important; /* Tamaño del logo para móviles */
+      }
+    }
+  
+    /* Clase para enlaces de menú responsivos */
+    .responsive-menu-link {
+      padding: 10px 5px !important; /* Ajustar el espaciado en tabletas y móviles */
+    }
+
+    .u-layout-row {
+    display: flex !important; /* Usar Flexbox para la alineación */
+    flex-wrap: wrap !important; /* Permitir el ajuste de elementos */
+    gap: 20px !important; /* Espacio entre elementos */
+  }
+
+  /* Estilo para cada celda en la cuadrícula */
+  .u-layout-cell {
+    flex: 1 1 30% !important; /* Flex grow, flex shrink, y base de tamaño para pantallas grandes */
+    box-sizing: border-box !important; /* Asegura que padding y border se incluyan en el ancho */
+    margin-bottom: 20px !important; /* Espacio en la parte inferior */
+  }
+
+  /* Media query para pantallas medianas (tabletas) */
+  @media (max-width: 1024px) {
+    .u-layout-cell {
+      flex: 1 1 45% !important; /* Dos elementos por línea en pantallas medianas */
+    }
+  }
+
+  /* Media query para pantallas pequeñas (móviles) */
+  @media (max-width: 768px) {
+    .u-layout-cell {
+      flex: 1 1 100% !important; /* Un elemento por línea en pantallas pequeñas */
+    }
+  }
+  .image-container {
+    display: flex !important; /* Configurar el contenedor como flexbox */
+    justify-content: space-around !important; /* Distribuir el espacio alrededor de las imágenes */
+    flex-wrap: wrap !important; /* Permitir que las imágenes se envuelvan a la siguiente fila cuando sea necesario */
+    gap: 10px !important; /* Espacio entre los elementos */
+}
+  .u-image-circle {
+  width: 175px !important; /* Tamaño por defecto para pantallas grandes */
+  height: 175px !important;
+  border-radius: 50% !important; /* Mantener la forma circular */
+  object-fit: cover !important; /* Asegura que la imagen cubra completamente */
+  margin: 10px !important; /* Espacio alrededor de las imágenes */
+}
+
+/* Media query para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .u-image-circle {
+    width: 130px !important; /* Reducir tamaño en pantallas medianas */
+    height: 130px !important;
+  }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .u-image-circle {
+    width: 100px !important; /* Reducir tamaño en pantallas pequeñas */
+    height: 100px !important;
+  }
+}
+
+/* Media query para pantallas muy pequeñas (moviles pequeños) */
+@media (max-width: 480px) {
+  .u-image-circle {
+    width: 80px !important; /* Aún más pequeño para pantallas más pequeñas */
+    height: 80px !important;
+  }
+}
+
+/* Seccion 5 */
+
+
+  </style>
+  
+  <body data-home-page="Inicio.html" data-home-page-title="Inicio" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="es">
+    <header class="u-black u-clearfix u-header u-header" id="sec-1fbb"><div class="u-clearfix u-sheet u-sheet-1">
+      <div class="header-container">
+        <div class="logo-container">
+          <img class="custom-expanded u-image u-image-contain u-image-default u-image-1 responsive-image" src="images/Logo.png" alt="" data-image-width="324" data-image-height="236">
+          <div class="company-names">
+            <h5 class="u-align-left u-custom-font u-text u-text-1 responsive-text">STWAR</h5>
+            <h4 class="u-align-left u-custom-font u-text u-text-2 white-space:nowrap!important responsive-text-Secondary">Devs Studios</h4>
+          </div>
+        </div>
         <nav class="u-menu u-menu-mega u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 700;">
             <a class="u-button-style u-custom-active-border-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -73,8 +237,9 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-        <h5 class="u-align-left u-custom-font u-text u-text-2">Devs Studios</h5>
-      </div></header> 
+    
+      </div>
+    </header> 
     <section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-section-1" id="sec-4864" data-image-width="1200" data-image-height="1200">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-align-left u-text u-text-1" data-animation-name="flipIn" data-animation-duration="1500" data-animation-direction="X" data-animation-delay="500">Avanza al futuro tecnológico </h1>
@@ -121,22 +286,41 @@
     </section>
     <section class="u-align-center u-black u-border-2 u-border-black u-clearfix u-container-align-center u-section-3" id="carousel_5bb9">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-palette-5-base u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Nuestro stack tecnológico </h2>
-        <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
-              <div class="u-container-layout u-similar-container u-container-layout-1">
-                <div alt="" class="u-image u-image-circle u-image-1" data-image-width="175" data-image-height="175"></div>
-                <div alt="" class="u-image u-image-circle u-image-2" data-image-width="1200" data-image-height="1200"></div>
-                <div alt="" class="u-image u-image-circle u-image-3" data-image-width="2048" data-image-height="2048"></div>
-                <div alt="" class="u-image u-image-circle u-image-4" data-image-width="1955" data-image-height="2048"></div>
-                <div alt="" class="u-image u-image-circle u-image-5" data-image-width="283" data-image-height="300"></div>
+          <h2 class="u-text u-text-default u-text-palette-5-base u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Nuestro stack tecnológico </h2>
+          <div class="u-expanded-width u-list u-list-1">
+              <div class="u-repeater u-repeater-1 image-container">
+                  <!-- Cada imagen en un contenedor flexible -->
+                  <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                      <div class="u-container-layout u-similar-container u-container-layout-2">
+                          <div class="u-image u-image-circle u-image-1" data-image-width="175" data-image-height="175"></div>
+                      </div>
+                  </div>
+               
+                  <!-- Repetir para más imágenes -->
+                  <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                      <div class="u-container-layout u-similar-container u-container-layout-2">
+                          <div class="u-image u-image-circle u-image-2" data-image-width="1200" data-image-height="1200"></div>
+                      </div>
+                  </div>
+                  <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                      <div class="u-container-layout u-similar-container u-container-layout-2">
+                          <div class="u-image u-image-circle u-image-3" data-image-width="2048" data-image-height="2048"></div>
+                      </div>
+                  </div>
+                  <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                      <div class="u-container-layout u-similar-container u-container-layout-2">
+                          <div class="u-image u-image-circle u-image-4" data-image-width="1955" data-image-height="2048"></div>
+                      </div>
+                  </div>
+                  <div class="u-align-left u-container-align-left u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+                      <div class="u-container-layout u-similar-container u-container-layout-2">
+                          <div class="u-image u-image-circle u-image-5" data-image-width="283" data-image-height="300"></div>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-    </section>
+  </section>
     <section class="u-align-center u-clearfix u-container-align-center u-white u-section-4" id="carousel_0ff8">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Más que una solución, un aliado </h2>
@@ -144,16 +328,22 @@
         </p>
       </div>
     </section>
+    
     <section class="u-align-left u-clearfix u-container-align-left u-grey-5 u-section-5" id="carousel_3701">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h6 class="u-custom-font u-text u-text-default u-text-1"> Dolore dolore voluptate aliqua ut mi</h6><span class="u-file-icon u-icon u-icon-1"><img src="images/689396.png" alt=""></span>
+        <h6 class="u-custom-font u-text u-text-default u-text-1">Dolore dolore voluptate aliqua ut mi</h6>
+        <span class="u-file-icon u-icon u-icon-1">
+          <img src="images/689396.png" alt="">
+        </span>
         <h3 class="u-text u-text-default u-text-2">Nosotros&nbsp;</h3>
-        <p class="u-align-left u-large-text u-text u-text-font u-text-variant u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250"> Labore proident nisi fugiat nostrud sint mollit aliqua ipsum ad veniam cupidatat ullamco ullamco et. Aliqua tempor do consectetur reprehenderit Lorem aliqua commodo occaecat deserunt. Do eiusmod incididunt<br>
+        <p class="u-align-left u-large-text u-text u-text-font u-text-variant u-text-3" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250">
+          Labore proident nisi fugiat nostrud sint mollit aliqua ipsum ad veniam cupidatat ullamco ullamco et. Aliqua tempor do consectetur reprehenderit Lorem aliqua commodo occaecat deserunt. Do eiusmod incididunt<br>
         </p>
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/768bdc4c-18c8-4e2e-97a0-d5825374a39a.svg" alt="" data-image-width="433" data-image-height="43">
-        <a href="#" class="u-active-custom-color-4 u-border-2 u-border-custom-color-4 u-btn u-button-style u-hover-custom-color-4 u-radius u-text-active-custom-color-4 u-text-custom-color-4 u-text-hover-white u-white u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Ver más </a>
+        <a href="#" class="u-active-custom-color-4 u-border-2 u-border-custom-color-4 u-btn u-button-style u-hover-custom-color-4 u-radius u-text-active-custom-color-4 u-text-custom-color-4 u-text-hover-white u-white u-btn-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Ver más</a>
       </div>
     </section>
+
     <section class="u-align-center u-clearfix u-container-align-center u-section-6" id="carousel_ba17">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-custom-font u-font-raleway u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Nuestros valores</h2><span class="u-file-icon u-icon u-text-custom-color-4 u-icon-1"><img src="images/1865154-a8cd0f4e.png" alt=""></span><span class="u-file-icon u-icon u-text-palette-3-base u-icon-2"><img src="images/30872-cd4b2dea.png" alt=""></span><span class="u-file-icon u-icon u-text-palette-2-base u-icon-3"><img src="images/2187578-b7620ff6.png" alt=""></span><span class="u-file-icon u-icon u-text-palette-4-base u-icon-4"><img src="images/1536792-3791eb2b.png" alt=""></span>
