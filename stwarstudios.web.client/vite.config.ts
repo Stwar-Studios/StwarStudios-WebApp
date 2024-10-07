@@ -1,7 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
-
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+//import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
@@ -12,7 +12,7 @@ const baseFolder =
         : `${process.env.HOME}/.aspnet/https`;
 
 const certificateArg = process.argv.map(arg => arg.match(/--name=(?<value>.+)/i)).filter(Boolean)[0];
-const certificateName = certificateArg ? certificateArg.groups.value : "stwarstudios.web.client";
+const certificateName = certificateArg && certificateArg?.groups ? certificateArg?.groups.value : "stwarstudios.web.client";
 
 if (!certificateName) {
     console.error('Invalid certificate name. Run this script in the context of an npm/yarn script or pass --name=<<app>> explicitly.')
@@ -38,7 +38,7 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [plugin()],
+    plugins: [react()],
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -60,9 +60,6 @@ export default defineConfig({
     build: {
         // generate .vite/manifest.json in outDir
         manifest: true,
-        rollupOptions: {
-            // overwrite default .html entry
-            input: '/scr/main.tsx',
-        },
+     
     },
 })
