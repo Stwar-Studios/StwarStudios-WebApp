@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
+import { resolve } from 'path'
 
 const baseFolder =
     process.env.APPDATA !== undefined && process.env.APPDATA !== ''
@@ -60,6 +61,10 @@ export default defineConfig({
     build: {
         // generate .vite/manifest.json in outDir
         manifest: true,
-     
+        rollupOptions: {
+            input: {
+              main: resolve(__dirname, 'index.html'),
+            },
+          },
     },
 })
