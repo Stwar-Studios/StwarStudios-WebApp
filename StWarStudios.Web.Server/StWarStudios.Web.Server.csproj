@@ -18,8 +18,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="cd web-client&#xD;&#xA;npm run build" />
-  </Target>
-
 </Project>
