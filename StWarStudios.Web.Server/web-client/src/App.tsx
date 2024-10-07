@@ -1,18 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import 'reset-css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './Components/Home';
+import NavBar from './Components/Shared/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Site under construction
-        </p>
-
-      </header>
-    </div>
+      <>
+          <NavBar />
+          <div className="App">
+              <Router>
+                  <div className="">
+                      <Routes>
+                          <Route
+                              path="/"
+                              element={
+                                  <HomePage />
+                              }
+                          />
+                      </Routes>
+                  </div>
+              </Router>
+          </div>
+      </>
   );
 }
 
