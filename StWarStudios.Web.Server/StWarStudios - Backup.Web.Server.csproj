@@ -22,4 +22,8 @@
     <Exec Command="cd web-client&#xD;&#xA;npm run build" />
   </Target>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd web-client&#xD;&#xA;start npm run start" />
+  </Target>
+
 </Project>
