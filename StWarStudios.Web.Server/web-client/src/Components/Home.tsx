@@ -5,14 +5,14 @@ import * as React from 'react'
 
 
 
-const HomePage = () => {
+const Home = () => {
     
     return (
         <div>
         {/* Sección 1: Video de fondo */}
         <section className="video-section">
           <video autoPlay muted loop>
-            <source src="images/Hologram_1.mp4" type="video/mp4" />
+            <source src="images/hologram_1.mp4" type="video/mp4" />
             Tu navegador no soporta video HTML5.
           </video>
           <div className="video-overlay"></div>
@@ -66,4 +66,4 @@ const HomePage = () => {
     )
   };
 
-export default HomePage;
+export default Home;
