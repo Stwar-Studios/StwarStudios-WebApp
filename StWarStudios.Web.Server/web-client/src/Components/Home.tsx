@@ -1,9 +1,5 @@
-import './Home.css';
+import './home.css';
 import * as React from 'react'
-//import Services from './Services';
-
-
-
 
 const Home = () => {
     
