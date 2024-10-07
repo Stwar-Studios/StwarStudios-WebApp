@@ -1,0 +1,30 @@
+
+
+--root
+{
+  --stwar-bs-primary-rgb: #FF0000;
+
+  
+
+}
+
+.stwar-navbar-priborg
+{
+    font-family: 'Priborg Sans', sans-serif;
+}
+.stwar-title
+{
+    font-family: 'Lexend';font-size: 22px;
+}
+.stwar-studios-title
+{
+    font-family: 'Lexend';font-size: 16px;    
+}
+.stwar-lexend-style
+{
+    font-family: 'Lexend';font-size: 16px;    
+}
+.btn-primary {
+  --bs-btn-bg: #553EC2;
+  --bs-btn-border-color: #553EC2;  
+}
