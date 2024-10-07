@@ -1,3 +1,4 @@
+import 'vite/modulepreload-polyfill'
 import './App.css';
 import 'reset-css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

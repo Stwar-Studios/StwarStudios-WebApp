@@ -56,5 +56,13 @@ export default defineConfig({
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
         }
-    }
+    },
+    build: {
+        // generate .vite/manifest.json in outDir
+        manifest: true,
+        rollupOptions: {
+            // overwrite default .html entry
+            input: '/scr/main.tsx',
+        },
+    },
 })
