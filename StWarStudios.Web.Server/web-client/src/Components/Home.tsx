@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import './Home.css';
-=======
-import './home.css';
-import * as React from 'react'
->>>>>>> d11dca7a1d88bb4b9d8452ec376f88ebce607d47
+
 
 const Home = () => {
   return (
@@ -20,7 +16,7 @@ const Home = () => {
         <div className="video-text d-flex flex-column justify-content-center align-items-center">
           <span className="home-title">Avanza al futuro tecnológico</span>
           <span className="home-sub-title mt-4">Empodera tu negocio con las mejores soluciones tecnológicas</span>
-          <Button variant="light" size="lg" className="mt-4">Contáctanos!</Button>
+          <Button variant="light" size="lg" className="mt-4">¡Contáctanos!</Button>
         </div>
       </section>
 
@@ -61,4 +57,3 @@ const Home = () => {
 };
 
 export default Home;
-
