@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import './Home.css';
+=======
+import './home.css';
+import * as React from 'react'
+>>>>>>> d11dca7a1d88bb4b9d8452ec376f88ebce607d47
 
 const Home = () => {
   return (
