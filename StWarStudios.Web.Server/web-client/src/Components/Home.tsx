@@ -16,7 +16,7 @@ const Home = () => {
         <div className="video-text d-flex flex-column justify-content-center align-items-center">
           <span className="home-title">Avanza al futuro tecnológico</span>
           <span className="home-sub-title mt-4">Empodera tu negocio con las mejores soluciones tecnológicas</span>
-          <Button variant="light" size="lg" className="mt-4">Contáctanos!</Button>
+          <Button variant="light" size="lg" className="mt-4">¡Contáctanos!</Button>
         </div>
       </section>
 
