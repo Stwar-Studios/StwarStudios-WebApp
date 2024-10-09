@@ -2,7 +2,6 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import './homepage.css';
 
-
 const HomePage = () => {
   return (
     <div>
@@ -13,10 +12,12 @@ const HomePage = () => {
           Tu navegador no soporta video HTML5.
         </video>
         <div className="video-overlay"></div>
-        <div className="video-text d-flex flex-column justify-content-center align-items-center">
+        <div className="video-text">
           <span className="home-title">Avanza al futuro tecnológico</span>
-          <span className="home-sub-title mt-4">Empodera tu negocio con las mejores soluciones tecnológicas</span>
-          <Button variant="light" size="lg" className="mt-4">¡Contáctanos!</Button>
+          <span className="home-sub-title">Empodera tu negocio con las mejores soluciones tecnológicas</span>
+          <div className="video-button">
+            <Button className="custom-button">¡Contáctanos!</Button>
+          </div>
         </div>
       </section>
 
