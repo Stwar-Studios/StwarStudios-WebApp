@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'reset-css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Components/Home';
+import HomePage from './Components/HomePage';
 import NavBar from './Components/Shared/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,7 +17,7 @@ function App() {
                           <Route
                               path="/"
                               element={
-                                  <Home />
+                                  <HomePage />
                               }
                           />
                       </Routes>

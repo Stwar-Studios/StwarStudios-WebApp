@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import './Home.css';
+import './HomePage.css';
 
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div>
       {/* Sección del video */}
@@ -56,4 +56,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
