@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'reset-css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './Components/HomePage';
+import HomePage from './Components/homepage';
 import NavBar from './Components/Shared/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
