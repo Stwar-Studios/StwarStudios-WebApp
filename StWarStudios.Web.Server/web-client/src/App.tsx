@@ -1,30 +1,27 @@
 import React from 'react';
 import './App.css';
-import 'reset-css'
+import 'reset-css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './Components/homepage';
 import NavBar from './Components/navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Services from './Components/Services';
+import Portafolio from './Components/Portafolio';
+import Footer from './Footer';  
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function App() {
   return (
-      <>
-          <NavBar />
-          <div className="App">
-              <Router>
-                  <div className="">
-                      <Routes>
-                          <Route
-                              path="/"
-                              element={
-                                  <HomePage />
-                              }
-                          />
-                      </Routes>
-                  </div>
-              </Router>
-          </div>
-      </>
+    <>
+      <NavBar />
+      <div className="App">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/Services" element={<Services />} />
+            <Route path="/Portafolio" element={<Portafolio />} />
+          </Routes>
+      </div>
+      <Footer />
+    </>
   );
 }
 
