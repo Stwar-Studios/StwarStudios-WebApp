@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -26,9 +27,15 @@ function NavBar() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto w-100">
                             <Container className='d-flex justify-content-center navbar-nav'>
-                                <Nav.Link href="#home" className='navbar-item text-white menu-item-border-primary'>Home</Nav.Link>
-                                <Nav.Link href="#pricing" className='navbar-item text-white'>Servicios</Nav.Link>
-                                <Nav.Link href="#pricing" className='navbar-item text-white'>Portafolio</Nav.Link>
+                                <Nav.Link as={Link} to="/" className='navbar-item text-white menu-item-border-primary'>
+                                    Home
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/Services" className='navbar-item text-white'>
+                                    Servicios
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/Portafolio" className='navbar-item text-white'>
+                                    Portafolio
+                                </Nav.Link>
                             </Container>
                         </Nav>
                         <Nav>
@@ -42,4 +49,3 @@ function NavBar() {
 };
 
 export default NavBar;
-
