@@ -42,14 +42,12 @@
 .home-title {
   font-size: 3.5rem; 
   margin-bottom: 20px; 
-  text-align: center; 
   font-weight: bold;
 }
 
 .home-sub-title {
   font-size: 2rem; 
   margin-bottom: 140px; 
-  text-align: center; 
   font-weight: bold;
 }
 
@@ -63,30 +61,94 @@
   color: white !important; 
   border: none !important;
   padding: 20px 40px; 
-  font-size:1.5rem !important; 
+  font-size: 1.5rem !important; 
   transition: background-color 0.3s; 
 }
 
 .custom-button:hover {
   background-color: #5a32a3 !important; 
-  border: none; 
 }
-
 
 /* Estilos para la sección de servicios */
 .services-section {
   padding: 60px 0; 
   background-color: #f8f9fa; 
-  margin-top: 0; 
 }
 
+.services-section .row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Estilos para las tarjetas de servicio */
 .service-card {
   transition: transform 0.3s;
+  margin: auto !important; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+  max-width: 350px; 
+  padding: 20px;
+  background-color: #fff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  min-height: 350px; 
 }
 
 .service-card:hover {
   transform: translateY(-10px); 
 }
+
+/* Estilos para las imágenes en las tarjetas de servicios */
+.service-card img {
+  display: block;        
+  margin: 0 auto;        
+  width: 35%; 
+  height: auto;          
+  object-fit: cover;     
+  border-radius: 5px;    
+  flex-grow: 1;
+}
+
+/* Estilo para el título de la tarjeta */
+.card-title {
+  color: #3f3f3f !important;
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  text-align: center; 
+  margin-top: 15px; 
+}
+
+/* Estilo para el texto en la parte inferior de la tarjeta */
+.card-text {
+  color: #484848; 
+  font-size: 1rem; 
+  text-align: center; 
+  margin-top: 20px; 
+  flex-grow: 0; 
+}
+
+/* Estilo específico para el botón morado */
+.btn-purple {
+  background-color: #6f42c1 !important; 
+  color: white; 
+  border: none !important;
+}
+
+.btn-purple:hover {
+  background-color: #5a32a3 !important; 
+}
+
+/* Estilo específico para el botón morado */
+.btn-blue { 
+  color: white; 
+  border: none !important;
+  margin-top: 100px !important; 
+}
+
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
@@ -102,4 +164,10 @@
     padding: 20px 30px; 
     font-size: 2rem; 
   }
+
+  .service-card {
+    max-width: 100%; 
+    margin-bottom: 20px; 
+  }
 }
+
