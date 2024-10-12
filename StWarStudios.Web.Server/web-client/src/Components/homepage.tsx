@@ -8,7 +8,7 @@ const HomePage = () => {
       {/* Sección del video */}
       <section className="video-section">
         <video autoPlay muted loop>
-          <source src="images/hologram_1.mp4" type="video/mp4" />
+          <source src="/images/hologram_1.mp4" type="video/mp4" />
           Tu navegador no soporta video HTML5.
         </video>
         <div className="video-overlay"></div>
@@ -28,25 +28,24 @@ const HomePage = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card service-card p-3 shadow-sm">
+                <img src="/images/keys.png" alt="soluciones" className="card-img-top" />
                 <div className="card-body">
-                  <h5 className="card-title">Desarrollo Web</h5>
-                  <p className="card-text">Creamos sitios web responsivos y funcionales a medida.</p>
+                  <h5 className="card-title">Soluciones <br /> Personalizadas</h5>
+                  <img src="/images/line blue.png" alt="LineBlue" style={{ width: '70%', height: 'auto', display: 'block', margin: '10px auto' }} />
+                  <p className="card-text">Creación de software conforme a tus necesidades, digitalización de tus procesos para transformar tu negocio, incluyendo automatización de tareas manuales, y más.</p>
+                  <br />
+                  <Button variant="primary" className="btn-blue w-100 mt-4">Más Información</Button> {/* Botón azul */}
                 </div>
               </div>
             </div>
             <div className="col-md-4">
               <div className="card service-card p-3 shadow-sm">
+                <img src="/images/cloud1.png" alt="integracion" className="card-img-top" />
                 <div className="card-body">
-                  <h5 className="card-title">Modelado 3D</h5>
-                  <p className="card-text">Diseños 3D para productos, arquitectura y más.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card service-card p-3 shadow-sm">
-                <div className="card-body">
-                  <h5 className="card-title">Animaciones 2D y 3D</h5>
-                  <p className="card-text">Animaciones dinámicas para proyectos audiovisuales.</p>
+                  <h5 className="card-title">Integración con <br /> Nuevas Tecnologías</h5>
+                  <img src="/images/line purple.png" alt="LinePurple" style={{ width: '70%', height: 'auto', display: 'block', margin: '10px auto' }} />
+                  <p className="card-text">Implementación y adaptación de tecnologías emergentes para modernizar tus sistemas existentes así como migración a la nube para escalamiento y mejora de la eficiencia operativa.</p>
+                  <Button className="btn-purple w-100 mt-4">Más Información</Button> {/* Botón morado */}
                 </div>
               </div>
             </div>
