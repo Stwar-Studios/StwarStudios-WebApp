@@ -4,13 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
-import { Link } from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 function NavBar() {
     return (
-        <div>
-            <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className="bg-nav-bar-bg stwar-navbar">
-                <Container>
+        <header className='header'>
+        <div className='stwar-navbar'>
+            <Navbar bg="dark" data-bs-theme="dark" collapseOnSelect expand="lg" className=" p-1">
+                <Container className=''>
                     <Navbar.Brand href="#home">
                         <div className='d-flex align-items-center'>
                             <Image src="images/logo.png" fluid width={68} />
@@ -27,24 +27,26 @@ function NavBar() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto w-100">
                             <Container className='d-flex justify-content-center navbar-nav'>
-                                <Nav.Link as={Link} to="/" className='navbar-item text-white menu-item-border-primary'>
+                                <NavLink to="/" 
+                                    className={({ isActive   }) => `p-2 navbar-item text-white ${isActive ? 'menu-item-border-primary' : ''}`}>
                                     Home
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/Services" className='navbar-item text-white'>
+                                </NavLink >
+                                <NavLink to="/Services" className={({ isActive   }) => `p-2 navbar-item text-white ${isActive ? 'menu-item-border-primary' : ''}`}>
                                     Servicios
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/Portafolio" className='navbar-item text-white'>
+                                </NavLink>
+                                <NavLink to="/Portafolio" className={({ isActive   }) => `p-2 navbar-item text-white ${isActive ? 'menu-item-border-primary' : ''}`}>
                                     Portafolio
-                                </Nav.Link>
+                                </NavLink>
                             </Container>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets" className='contact-button'>Contact</Nav.Link>
+                            <NavLink to='/Contact' className='contact-button'>Contact</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
         </div>
+        </header>
     );
 };
 

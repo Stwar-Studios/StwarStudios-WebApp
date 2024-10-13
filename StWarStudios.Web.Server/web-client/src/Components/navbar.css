@@ -1,12 +1,18 @@
-.bg-nav-bar-bg {
-    background-color: #000 !important;
+.header {
+    transition: all 0.5s;
+    z-index: 500;
+    padding: 0px 0;
 }
 
 .stwar-navbar {
-    height: 60px;
-    position: fixed;
+    --position: fixed;
     width: 100%;
-    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .navbar-item {
@@ -22,6 +28,7 @@
     padding: 0;
     margin: 0;
     color: white;
+    transition: border-bottom 0.3s ease;
 }
 
 .navbar-item:hover {

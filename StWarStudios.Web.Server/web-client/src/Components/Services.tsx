@@ -1,4 +1,4 @@
-import './services.css';
+import './Services.css';
 import * as React from 'react'
 import Card from 'react-bootstrap/Card';
 
