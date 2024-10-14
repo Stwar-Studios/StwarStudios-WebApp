@@ -1,0 +1,97 @@
+/* Estilo para la sección de la imagen de fondo */
+.background-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Degradado negro para la imagen de fondo */
+  .background-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+  }
+  
+  /* Contenido de la sección de fondo */
+  .background-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Título y subtítulo de la sección de fondo */
+  .background-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .background-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  /* Estilo para la sección del formulario */
+  .form-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  /* Contenido del formulario */
+  .form-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para el título del formulario */
+  .form-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  /* Estilo del formulario */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Estilo para los campos de entrada */
+  .contact-input, .contact-textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Estilo para el botón de enviar */
+  .contact-button {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efecto hover para el botón */
+  .contact-button:hover {
+    background-color: #5a32a3;
+  }
+  
