@@ -42,7 +42,7 @@
 .home-title {
   font-size: 3.95rem;   
   font-weight: bold;
-  margin-bottom: 7% !important;  
+  margin-bottom: 3% !important;  
 }
 
 .home-sub-title {
@@ -98,6 +98,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   border-radius: 10px;
   min-height: 350px; 
+  cursor: pointer;
 }
 
 .service-card:hover {
@@ -237,8 +238,82 @@
 }
 .angular
 {
+  color:#fff;
 }
 .sql
 {
-   color: #255dd6;
+   color: #c2226c;
+}
+
+.company-desc
+{
+  font-family: Lexend;  
+  text-align: center;
+}
+
+.company-desc .desc-content
+{  
+  margin: 2.5rem;
+  justify-content: space-between;
+  text-align: justify;
+}
+.us-desc
+{
+  background: #f4f3f1;
+}
+
+.us-desc h1
+{
+  font-family: 'Lexend';
+}
+
+.us-content
+{  
+  text-align: start;
+  font-family: 'Manrope';
+}
+.us
+{
+  justify-content: start;
+  box-sizing: content-box;  
+  width: fit-content;     /* El ancho se ajusta al contenido */
+  position: relative;
+  text-align: start;
+}
+.us-img
+{
+  width: 12rem;
+  position: absolute;
+  top: 70%;
+  left: -14%;
+}
+
+.values-desc
+{
+  padding: 4.0rem;
+}
+.desc-content
+{
+  gap: 2.0rem;
+  padding: 2.0rem;
+}
+
+.values-item h1, h2, .values-desc container h1
+{
+  font-family: 'Lexend';
+}
+
+.values-item
+{
+  height: 15.0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Manrope';
+}
+
+.value-body
+{
+  height: 40%;
 }

@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 function NavBar() {
     return (
         <header className='header'>
@@ -40,7 +41,10 @@ function NavBar() {
                             </Container>
                         </Nav>
                         <Nav>
-                            <NavLink to='/Contact' className='contact-button'>Contact</NavLink>
+                            <NavLink to='/Contact' className='contact-button'>
+                            <Button className='btn-lg btn-warning text-white' >Contact</Button>
+                            
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
