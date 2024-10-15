@@ -34,7 +34,7 @@ const HomePage = () => {
           <span className="home-title">Avanza al futuro tecnológico</span>
           <span className="home-sub-title mb-4 text-wrap">Empodera tu negocio con las mejores e innovadoras soluciones tecnol&oacute;gicas</span>
           <div className="video-button">
-            <Button variant='outline-primary' className="stw-btn-primary" onClick={() =>scrollToSection('services')} >M&aacute;s informaci&oacute;n</Button>
+            <Button className="btn-more-info" onClick={() =>scrollToSection('services')} >M&aacute;s informaci&oacute;n</Button>
           </div>
         </div>
       </section>
