@@ -70,3 +70,20 @@
     align-items: center; 
 }
 
+.contact-button1 {
+    background-color: #6f42c1 !important;
+    color: #fff;
+    border: none !important;
+    padding: 5px 10px !important; 
+    font-size: 1rem; 
+    border-radius: 10px !important;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Efecto hover para el botón */
+  .contact-button1:hover {
+    background-color: #5a32a3;
+    transform: translateY(-2px);
+  }
+  
