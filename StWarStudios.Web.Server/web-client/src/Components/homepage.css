@@ -1,14 +1,13 @@
 /* Estilos para la sección del video */
 .video-section {
   position: relative;
-  height: 70vh; 
+  height: 90vh; /* Ajustar la altura del video al 90% de la ventana */
 }
 
 .video-section video {
   position: absolute;
   top: 0%;
   left: 0%;
-  --transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -27,48 +26,65 @@
 }
 
 .video-text {
-  position: relative;
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
   color: #f8f9fa;
   text-align: center; 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  justify-content: center; 
   height: 100%;
-  padding: 20px 0;
-  padding-top: 7% !important;  
+  padding: 50px 0 !important; 
 }
 
+
 .home-title {
-  font-size: 3.95rem;   
+  font-size: 4rem; 
   font-weight: bold;
-  margin-bottom: 3% !important;  
+  margin-bottom: 3% !important;
+  text-align: center; 
+  width: 100%; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .home-sub-title {
-  font-size: 2rem;   
-  font-weight: bold;
+  font-size: 2.5rem; 
+  font-weight: bold; 
   color: #d6d6d6;
-  max-width: 50%;
+  max-width: 70%; 
+  text-align: center; 
+  margin: 0; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .video-button {
-  bottom: 20%;
-  position: absolute;
+  position: absolute; 
+  bottom: 50px; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }
 
 /* Estilos personalizados para el botón */
-.stw-btn-primary {
-  background-color: #00BFFF  !important; 
-  color: white !important; 
-  border: none !important;
-  padding: 0.65rem 1.7rem !important; 
-  font-size: 1.5rem !important; 
+.btn-more-info {
+  background-color: #6f42c1 !important;
+  color: white; 
+  border: none !important; 
+  padding: 0.65rem 1.7rem; 
+  font-size: 1.5rem; 
   transition: background-color 0.3s; 
+  cursor: pointer; 
 }
 
-.stw-btn-primary:hover {
-  background-color: #1E90FF   !important; 
+.btn-more-info:hover {
+  background-color: #5a32a3 !important;
 }
 
 /* Estilos para la sección de servicios */
@@ -152,7 +168,6 @@
   margin-top: 100px !important; 
 }
 
-
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
   .home-title {
@@ -174,8 +189,7 @@
   }
 }
 
-.tech-stack
-{
+.tech-stack {
   background-color: #1a1a1a;
   padding-bottom: 3.0rem;
   padding-top: 2.0rem;
@@ -187,8 +201,8 @@
   gap: 40px;
   margin-top: 3.0rem;
 }
+
 .icon {
-  
   background: -webkit-linear-gradient(top, #926178 0%, #a63ac7 100%); /* Degradado para navegadores webkit */
   background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%); /* Degradado para navegadores estándar */
   -webkit-background-clip: text; /* Recorte de fondo para navegadores webkit */
@@ -196,15 +210,13 @@
   background-clip: text; /* Recorte de fondo estándar */
   -webkit-text-fill-color: transparent; /* Color de texto transparente para navegadores webkit */
   -moz-text-fill-color: transparent; /* Color de texto transparente para navegadores Mozilla */
-  
-  
- cursor: pointer;
- 
+  cursor: pointer;
 }
-.combined-icon
-{
+
+.combined-icon {
   position: relative;
 }
+
 .overlay-icon {
   position: absolute;
   bottom: -25%;
@@ -212,18 +224,15 @@
   color: #008AD7; /* Color para el icono de nube */
 }
 
-.blazor
-{
- color: #512BD4;
+.blazor {
+  color: #512BD4;
 }
 
-.azure
-{
+.azure {
   color: #008AD7;
 }
 
-.dotnet
-{
+.dotnet {
   color: #fff;
   border: #008AD7;
   background: #512BD4;
@@ -232,79 +241,72 @@
   display: inline-block;
   padding: 12px;
 }
-.react
-{
+
+.react {
   color: #61DAFB;
 }
-.angular
-{
-  color:#fff;
-}
-.sql
-{
-   color: #c2226c;
+
+.angular {
+  color: #fff;
 }
 
-.company-desc
-{
+.sql {
+  color: #c2226c;
+}
+
+.company-desc {
   font-family: Lexend;  
   text-align: center;
 }
 
-.company-desc .desc-content
-{  
+.company-desc .desc-content {  
   margin: 2.5rem;
   justify-content: space-between;
   text-align: justify;
 }
-.us-desc
-{
+
+.us-desc {
   background: #f4f3f1;
 }
 
-.us-desc h1
-{
+.us-desc h1 {
   font-family: 'Lexend';
 }
 
-.us-content
-{  
+.us-content {  
   text-align: start;
   font-family: 'Manrope';
 }
-.us
-{
+
+.us {
   justify-content: start;
   box-sizing: content-box;  
-  width: fit-content;     /* El ancho se ajusta al contenido */
+  width: fit-content; /* El ancho se ajusta al contenido */
   position: relative;
   text-align: start;
 }
-.us-img
-{
+
+.us-img {
   width: 12rem;
   position: absolute;
   top: 70%;
   left: -14%;
 }
 
-.values-desc
-{
+.values-desc {
   padding: 4.0rem;
 }
-.desc-content
-{
+
+.desc-content {
   gap: 2.0rem;
   padding: 2.0rem;
 }
 
-.values-item h1, h2, .values-desc container h1
-{
+.values-item h1, h2, .values-desc container h1 {
   font-family: 'Lexend';
 }
 
-.values-item
-{
+.values-item {
   height: 15.0rem;
   display: flex;
   flex-direction: column;
@@ -313,7 +315,6 @@
   font-family: 'Manrope';
 }
 
-.value-body
-{
+.value-body {
   height: 40%;
 }
