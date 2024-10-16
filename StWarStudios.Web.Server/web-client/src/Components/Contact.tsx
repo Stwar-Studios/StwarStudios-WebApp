@@ -1,6 +1,6 @@
 import './contact.css';
 import * as React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Importar estilos de Font Awesome
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Contact: React.FC = () => {
   return (
