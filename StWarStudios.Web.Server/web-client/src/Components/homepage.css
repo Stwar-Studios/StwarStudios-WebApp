@@ -114,7 +114,7 @@
   flex-wrap: wrap; /* Permitir que se ajusten a múltiples filas */
 }
 
-/* Estilos para las tarjetas de servicio */
+/* Styles Service-Card*/
 .service-card{
   transition: transform 0.3s;
   margin: 15px;
