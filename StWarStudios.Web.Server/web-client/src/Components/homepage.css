@@ -101,36 +101,58 @@
 }
 
 /* Estilos para las tarjetas de servicio */
-.service-card {
+/* Estilos para la sección de servicios */
+.services-section {
+  padding: 60px 0; 
+  background-color: #f8f9fa; 
+}
+
+.services-section .row {
+  display: flex; /* Usar flexbox */
+  justify-content: space-around; /* Espaciado entre tarjetas */
+  align-items: stretch; /* Asegurar que todas las tarjetas tengan la misma altura */
+  flex-wrap: wrap; /* Permitir que se ajusten a múltiples filas */
+}
+
+/* Estilos para las tarjetas de servicio */
+.service-card{
   transition: transform 0.3s;
-  margin: auto !important; 
+  margin: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%; 
-  max-width: 350px; 
+  height: 100%;
+  max-width: 350px;
   padding: 20px;
-  background-color: #fff; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  min-height: 350px; 
   cursor: pointer;
 }
 
-.service-card:hover {
-  transform: translateY(-10px); 
+
+.card-text {
+  color: #484848; 
+  font-size: 1rem; 
+  text-align: center; 
+  margin-top: 1em; 
+  flex-grow: 0; 
+  flex-shrink: 0; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
-/* Estilos para las imágenes en las tarjetas de servicios */
 .service-card img {
   display: block;        
   margin: 0 auto;        
-  width: 35%; 
-  height: auto;          
-  object-fit: cover;     
+  width: 100%; /* Asegura que la imagen ocupe el ancho de la tarjeta */
+  max-height: 200px; /* Ajustar la altura máxima para uniformidad */
+  object-fit: contain; /* Mantiene la relación de aspecto sin recortar */
   border-radius: 5px;    
-  flex-grow: 1;
+  flex-grow: 1; /* Permitir que la imagen crezca */
 }
+
 
 /* Estilo para el título de la tarjeta */
 .card-title {
@@ -139,15 +161,6 @@
   font-weight: bold; 
   text-align: center; 
   margin-top: 15px; 
-}
-
-/* Estilo para el texto en la parte inferior de la tarjeta */
-.card-text {
-  color: #484848; 
-  font-size: 1rem; 
-  text-align: center; 
-  margin-top: 20px; 
-  flex-grow: 0; 
 }
 
 /* Estilo específico para el botón morado */
@@ -168,14 +181,22 @@
   margin-top: 100px !important; 
 }
 
+/* Estilos para la sección de servicios */
+.services-section .row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  flex-wrap: wrap;
+}
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
   .home-title {
-    font-size: 2.5rem; 
+    font-size: 2.5rem !important; 
   }
 
   .home-sub-title {
-    font-size: 1.5rem; 
+    font-size: 1.5rem !important; 
   }
 
   .custom-button {
@@ -184,8 +205,8 @@
   }
 
   .service-card {
-    max-width: 100%; 
-    margin-bottom: 20px; 
+    width: 100% !important; /* Ancho más flexible en pantallas pequeñas */
+    max-width: 500px !important; /* Maximo ancho de las tarjetas */
   }
 }
 
@@ -317,4 +338,38 @@
 
 .value-body {
   height: 40%;
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 576px) {
+  .video-text {
+    padding: 20px 0;
+  }
+
+  .home-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5%;
+  }
+
+  .home-sub-title {
+    font-size: 1.5rem;
+    max-width: 90%;
+  }
+
+  .services-section {
+    padding: 30px 0;
+  }
+
+  .service-card {
+    
+    margin: 10px;
+    padding: 50px !important;
+    min-height: 300px !important; /* Ajusta la altura mínima según sea necesario */
+  }
+
+  .video-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    bottom: 20px;
+  }
 }
