@@ -1,7 +1,7 @@
-/* Estilos para la sección del video */
+/* Styles Video Section */
 .video-section {
     position: relative;
-    height: 90vh; /* Ajustar la altura del video al 90% de la ventana */
+    height: 90vh; 
   }
   
   .video-section video {
@@ -72,7 +72,7 @@
     transform: translateX(-50%); 
   }
   
-  /* Estilos personalizados para el botón */
+  /* Styles Button Info */
   .btn-more-info {
     background-color: #6f42c1 !important;
     color: white; 
