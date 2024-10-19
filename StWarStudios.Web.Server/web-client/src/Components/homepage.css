@@ -119,7 +119,7 @@
 
 .us {
   justify-content: start;
-  box-sizing: content-box;  
+  
   width: fit-content; /* El ancho se ajusta al contenido */
   position: relative;
   text-align: start;
@@ -142,7 +142,7 @@
 }
 
 .values-item h1, h2, .values-desc container h1 {
-  font-family: 'Lexend';
+  --font-family: 'Lexend';
 }
 
 .values-item {
