@@ -25,11 +25,11 @@ function PrimarySection()
           <h3 className="home-sub-title mb-4 text-wrap">Empodera tu negocio con las mejores e innovadoras soluciones tecnol&oacute;gicas</h3>
           <div className="video-button">
             {/* <Button variant='outline-light' className="stw-btn-primary" onClick={() =>scrollToSection('services')} >M&aacute;s informaci&oacute;n</Button> */}
-            <a href="/contact">Contactanos</a>
+            {/* <a href="#">M&aacute;s informaci&oacute;n</a> */}
           </div>
         </div>      
         <div  className="arrow-down">
-          <a href="#" onClick={() =>scrollToSection('services')}><FaAngleDown  size={30} /></a>
+          <a href="#"><FaAngleDown  size={30}/></a>
         </div>
         
       

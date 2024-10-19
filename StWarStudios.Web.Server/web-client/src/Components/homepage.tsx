@@ -18,7 +18,7 @@ const HomePage = () => {
       
       <TechStackSection></TechStackSection>
       <UsDescSection></UsDescSection>
-      <ValuesDescSection></ValuesDescSection>         */}
+      <ValuesDescSection></ValuesDescSection>        
     </div>
   );
 };
