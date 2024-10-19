@@ -12,95 +12,6 @@
   flex-wrap: wrap;
 }
 
-/* Estilos para las tarjetas de servicio */
-/* Estilos para la sección de servicios */
-.services-section {
-  padding: 60px 0; 
-  background-color: #f8f9fa; 
-}
-
-.services-section .row {
-  display: flex; /* Usar flexbox */
-  justify-content: space-around; /* Espaciado entre tarjetas */
-  align-items: stretch; /* Asegurar que todas las tarjetas tengan la misma altura */
-  flex-wrap: wrap; /* Permitir que se ajusten a múltiples filas */
-}
-
-/* Styles Service-Card*/
-.service-card{
-  transition: transform 0.3s;
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  max-width: 350px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-
-.card-text {
-  color: #484848; 
-  font-size: 1rem; 
-  text-align: center; 
-  margin-top: 1em; 
-  flex-grow: 0; 
-  flex-shrink: 0; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
-
-.service-card img {
-  display: block;        
-  margin: 0 auto;        
-  width: 100%; /* Asegura que la imagen ocupe el ancho de la tarjeta */
-  max-height: 200px; /* Ajustar la altura máxima para uniformidad */
-  object-fit: contain; /* Mantiene la relación de aspecto sin recortar */
-  border-radius: 5px;    
-  flex-grow: 1; /* Permitir que la imagen crezca */
-}
-
-
-/* Estilo para el título de la tarjeta */
-.card-title {
-  color: #3f3f3f !important;
-  font-size: 1.5rem; 
-  font-weight: bold; 
-  text-align: center; 
-  margin-top: 15px; 
-}
-
-/* Estilo específico para el botón morado */
-.btn-purple {
-  background-color: #6f42c1 !important; 
-  color: white; 
-  border: none !important;
-}
-
-.btn-purple:hover {
-  background-color: #5a32a3 !important; 
-}
-
-/* Estilo específico para el botón morado */
-.btn-blue { 
-  color: white; 
-  border: none !important;
-  margin-top: 100px !important; 
-}
-
-/* Estilos para la sección de servicios */
-.services-section .row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-  flex-wrap: wrap;
-}
-
 /* Media queries para pantallas pequeñas */
 @media (max-width: 576px) {
   .home-title {
@@ -114,11 +25,6 @@
   .custom-button {
     padding: 20px 30px; 
     font-size: 2rem; 
-  }
-
-  .service-card {
-    width: 100% !important; /* Ancho más flexible en pantallas pequeñas */
-    max-width: 500px !important; /* Maximo ancho de las tarjetas */
   }
 }
 

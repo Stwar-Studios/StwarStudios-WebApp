@@ -1,0 +1,106 @@
+/* Styles Services Section */
+.services-section {
+    padding: 60px 0 !important;
+    background-color: #f8f9fa !important;
+}
+
+.services-section .row {
+    display: flex !important;
+    justify-content: center !important; 
+    align-items: stretch !important; 
+    flex-wrap: nowrap !important; 
+    gap: 15px !important; 
+}
+
+/* Styles Services Card */
+.service-card {
+    transition: transform 0.3s !important;
+    margin: 0 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important; 
+    max-width: 350px !important;
+    padding: 20px !important;
+    background-color: #fff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    flex: 1 1 350px !important; 
+    margin-left: 100px !important;
+}
+
+/* Styles Body Card */
+.service-card .card-body {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important; 
+    flex-grow: 1 !important; 
+}
+
+/* Styles Text Card */
+.card-text {
+    color: #484848 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+    margin-top: 1em !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+}
+
+/* Styles Images Card */
+.service-card img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-height: 200px !important;
+    object-fit: contain !important;
+    border-radius: 5px !important;
+}
+
+/* Style Title Card */
+.card-title {
+    color: #3f3f3f !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+}
+
+/* Button Purple Design */
+.btn-purple {
+    background-color: #6f42c1 !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-purple:hover {
+    background-color: #5a32a3 !important;
+}
+
+/* Button Blue Design */
+.btn-blue {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    margin-top: 20px !important;
+}
+
+/* Media queries responsive */
+@media (max-width: 768px) {
+    .service-card {
+        max-width: 90% !important; 
+        margin: 10px !important; 
+    }
+}
+
+@media (max-width: 480px) {
+    .card-title {
+        font-size: 1.2rem !important; 
+    }
+
+    .card-text {
+        font-size: 0.9rem !important; 
+    }
+}
