@@ -33,15 +33,15 @@ function NavBar() {
                             </a>
                         </div>
                         <div className={`navbar-collapse ${expanded ? 'show' : ''}`} id="responsive-navbar-nav">
-                            <nav className="me-auto w-100">
-                                <div className='d-flex justify-content-center navbar-nav'>
-                                    <NavLink to="/" className={({ isActive }) => `p-2 navbar-item ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                            <nav className="me-auto w-100 navbar-nav">
+                                <div className='navbar-nav'>
+                                    <NavLink to="/" className={({ isActive }) => `navbar-item p-2 ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Home
                                     </NavLink>
-                                    <NavLink to="/services" className={({ isActive }) => `p-2 navbar-item ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                    <NavLink to="/services" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Servicios
                                     </NavLink>
-                                    <NavLink to="/portafolio" className={({ isActive }) => `p-2 navbar-item ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                    <NavLink to="/portafolio" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Portafolio
                                     </NavLink>
                                 </div>
