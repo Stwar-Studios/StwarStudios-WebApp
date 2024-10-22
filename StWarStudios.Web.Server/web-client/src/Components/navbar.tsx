@@ -1,5 +1,5 @@
 import './navbar.css';
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
@@ -8,16 +8,37 @@ function NavBar() {
     const isHome = location.pathname === '/'; 
     const isContact = location.pathname.toLowerCase() === '/contact'; 
     const [expanded, setExpanded] = useState(false);
+    const [scrollOpacity, setScrollOpacity] = useState(0); 
+    useEffect(() => {
+        // Scroll event listener to adjust navbar opacity based on scroll distance
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            // Calculate new opacity based on scroll position (max opacity is 0.9)
+            const newOpacity = Math.min(scrollTop / 300, 1);
+            setScrollOpacity(newOpacity);
+        };
 
-    
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    useEffect(() => {
+        if (expanded) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [expanded]);
 
     return (
         
         <header className='header'>
             <div className={`stwar-navbar ${expanded ? 'expanded' : ''} `}>
             <div className={`navbar ${expanded ? 'expanded' : ''}`}>
-                    <div className='navbar-container'>
-                        <div className={`navbar-menu-header ${expanded ? 'expanded' : ''}`}>
+                    <div className='navbar-container' >
+                        <div className={`navbar-menu-header ${expanded ? 'expanded' : ''}`} style={{ backgroundColor: `rgba(0, 0, 0, ${expanded ? 1 : scrollOpacity})`,  transition: 'background-color 0.3s ease' }}>
                             <a href="/" className='navbar-brand d-flex align-items-center'>
                                 <img src="images/logo.png" alt="logo" style={{ width: 68 }} />
                                 <div className='ms-2 text-center d-flex flex-column align-items-start'>

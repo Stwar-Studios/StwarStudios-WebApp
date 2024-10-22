@@ -4,6 +4,10 @@
     padding: 0px 0;
 }
 
+.stwar-navbar  .navbar{
+    padding: 0 !important;
+}
+
 .contact-btn
 {
     --position: absolute;
@@ -30,7 +34,7 @@
     --position: fixed;
     width: 100%;
     
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
@@ -374,7 +378,7 @@
         height: 0;
         transform: translateY(-130%);
         --transition: 0.25s ease-in;
-        
+        margin-right: 0px;
     }
     .navbar-collapse.show {
         display: flex;
