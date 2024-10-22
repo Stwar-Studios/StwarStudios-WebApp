@@ -17,7 +17,7 @@ function ServicesSection(){
                   </div>
                  
                         <p className="">Creación de software conforme a tus necesidades, digitalización de tus procesos para transformar tu negocio, incluyendo automatización de tareas manuales, y más.</p>  
-                          <a className="service-btn btn-blue">Más Información</a> {/* Button Blue */}
+                          <a href='#us-section' className="service-btn btn-blue">Más Información</a> {/* Button Blue */}
                   </div>
             </div>
               <div className="service-card shadow-lg shadow-purple">
