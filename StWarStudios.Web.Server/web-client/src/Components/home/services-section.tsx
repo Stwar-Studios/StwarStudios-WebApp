@@ -1,5 +1,4 @@
 import './services-section.css';
-import Button from 'react-bootstrap/Button';
 import { Element } from 'react-scroll';
 
 
@@ -29,7 +28,7 @@ function ServicesSection(){
                     <img src="/images/line purple.png" alt="LinePurple" className='img-underline' />
                   </div>
                         <p className="">Implementación y adaptación de tecnologías emergentes para modernizar tus sistemas existentes así como migración a la nube para escalamiento y mejora de la eficiencia operativa.</p>
-                          <a className="service-btn btn-purple">Más Información</a> {/* Button Purple */}
+                          <a href='#us-section' className="service-btn btn-purple">Más Información</a> {/* Button Purple */}
               </div>
               </div>
             </div>

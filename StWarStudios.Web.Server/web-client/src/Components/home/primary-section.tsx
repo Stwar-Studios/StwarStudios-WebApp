@@ -1,6 +1,5 @@
 import "./primary-section.css"
 import { scroller } from 'react-scroll';
-//import Button from 'react-bootstrap/Button';
 import { FaAngleDown  } from 'react-icons/fa';
 
 const scrollToSection = (section : string) => {
