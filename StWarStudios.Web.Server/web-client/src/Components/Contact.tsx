@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
       {/* Sección de imagen de fondo */}
       <div className="contact-section">
         <section className="image-section">
-          <img src="/images/guys.jpg" alt="Fondo" className="background-image" />
+          <img src="/images/team.jpg" alt="Fondo" className="background-image" />
           <div className="image-overlay"></div>
           <div className="image-text">
             <span className="home-title">Lo increíble comienza aquí.</span><br />
