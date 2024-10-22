@@ -11,7 +11,7 @@ function ValuesDescSection()
  return <>
     <Element name="values-desc" className="values-desc text-dark p-2" > 
         <div className="m-5 p-5">
-          <h1 className='mb-5'><strong>Nuestros valores</strong></h1>
+          <h1 className='title mb-5'><strong>Nuestros valores</strong></h1>
           <div className='desc-content row'>
             <div className='col values-item'>            
               <FaShieldAlt className='img' size={valuesIconSize} color="#6D31ED" title="Integridad" />

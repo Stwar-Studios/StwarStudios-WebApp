@@ -1,9 +1,10 @@
-
-
 .values-desc {
     padding: 4.0rem;
   }
   
+  .title {
+    text-align: center;
+  }
   .desc-content {
     gap: 2.0rem;
     padding: 2.0rem;
