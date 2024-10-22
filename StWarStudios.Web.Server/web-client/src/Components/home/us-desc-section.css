@@ -1,0 +1,29 @@
+
+
+.us-desc {
+    background: #f4f3f1;
+  }
+  
+  .us-desc h1 {
+    font-family: 'Lexend';
+  }
+  
+  .us-content {  
+    text-align: start;
+    font-family: 'Manrope';
+  }
+  
+  .us {
+    justify-content: start;
+    
+    width: fit-content; /* El ancho se ajusta al contenido */
+    position: relative;
+    text-align: start;
+  }
+  
+  .us-img {
+    width: 12rem;
+    position: absolute;
+    top: 70%;
+    left: -14%;
+  }

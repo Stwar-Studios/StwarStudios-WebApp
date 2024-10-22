@@ -1,3 +1,4 @@
+import './tech-stack-section.css'
 import { Element } from 'react-scroll';
 import { Tooltip } from 'react-tooltip'
 import { SiMicrosoftazure, SiDotnet, SiBlazor, SiAngular, SiReact } from 'react-icons/si';

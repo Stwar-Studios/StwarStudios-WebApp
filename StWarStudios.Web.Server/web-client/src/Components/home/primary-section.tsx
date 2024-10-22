@@ -29,7 +29,7 @@ function PrimarySection()
           </div>
         </div>      
         <div  className="arrow-down">
-          <a href="#"><FaAngleDown  size={30}/></a>
+          <a href="#services" onClick={() =>scrollToSection('services')}><FaAngleDown  size={30}/></a>
         </div>
         
       

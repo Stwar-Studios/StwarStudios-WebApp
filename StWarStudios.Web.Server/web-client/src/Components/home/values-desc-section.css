@@ -1,0 +1,28 @@
+
+
+.values-desc {
+    padding: 4.0rem;
+  }
+  
+  .desc-content {
+    gap: 2.0rem;
+    padding: 2.0rem;
+  }
+  
+  .values-item h1, h2, .values-desc container h1 {
+    --font-family: 'Lexend';
+  }
+  
+  .values-item {
+    height: 15.0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Manrope';
+  }
+  
+  .value-body {
+    height: 40%;
+  }
+  

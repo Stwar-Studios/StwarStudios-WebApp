@@ -1,9 +1,5 @@
 import './navbar.css';
 import React, { useState } from "react";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Image from 'react-bootstrap/Image';
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
@@ -12,6 +8,9 @@ function NavBar() {
     const isHome = location.pathname === '/'; 
     const isContact = location.pathname.toLowerCase() === '/contact'; 
     const [expanded, setExpanded] = useState(false);
+
+    
+
     return (
         
         <header className='header'>

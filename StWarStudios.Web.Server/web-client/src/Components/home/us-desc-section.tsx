@@ -1,3 +1,4 @@
+import './us-desc-section.css'
 import { Element } from 'react-scroll';
 import { FaLaptop} from 'react-icons/fa';
 
@@ -5,7 +6,7 @@ function UsDescSection()
 {
  return <>
  <Element name="us-desc" className="us-desc text-dark p-2" > 
-        <div className="container m-5 p-5">
+        <div className="m-5 p-5">
           <div className='row container p-5'>
             <div className='col-6'>
               <div className='us'>

@@ -12,13 +12,13 @@ const HomePage = () => {
     <div className='home-page'>
       {/* Sección del video */}
       <PrimarySection></PrimarySection>
-      <CompanyDescSection></CompanyDescSection>
-      {/* Sección de servicios */}
-      {/* <ServicesSection></ServicesSection>
-      
+      <ServicesSection></ServicesSection>
+      {/* <CompanyDescSection></CompanyDescSection>
       <TechStackSection></TechStackSection>
       <UsDescSection></UsDescSection>
-      <ValuesDescSection></ValuesDescSection>         */}
+      <ValuesDescSection></ValuesDescSection>  */}
+      {/* Sección de servicios */}
+      
     </div>
   );
 };
