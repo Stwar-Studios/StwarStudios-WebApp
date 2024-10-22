@@ -17,6 +17,8 @@ const HomePage = () => {
       <TechStackSection></TechStackSection>
       <UsDescSection></UsDescSection>
       <ValuesDescSection></ValuesDescSection> 
+      {/* Sección de servicios */}
+      
     </div>
   );
 };
