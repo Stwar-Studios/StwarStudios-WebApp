@@ -1,13 +1,19 @@
-
-
 .us-desc {
-    background: #f4f3f1;
-  }
+  background: #f4f3f1;
+ }
+
+ .row {
+  transform: translateX(50px);
+ }
   
   .us-desc h1 {
     font-family: 'Lexend';
   }
-  
+
+  .icon {
+    margin-left: 50px;
+  }
+
   .us-content {  
     text-align: start;
     font-family: 'Manrope';
@@ -15,15 +21,43 @@
   
   .us {
     justify-content: start;
-    
-    width: fit-content; /* El ancho se ajusta al contenido */
+    width: fit-content;
     position: relative;
     text-align: start;
+  }
+
+  .subtitle {
+    justify-content: start;
+    width: fit-content;
+    text-align: start;
+    position: relative;
+    color: rgb(94, 94, 94);
+    left: 1%;
+    transform: translateY(18px);
+    font-size: small;
   }
   
   .us-img {
     width: 12rem;
     position: absolute;
-    top: 70%;
-    left: -14%;
+    top: 85%;
+    left: -6%;
+  }
+
+  .contact-button1 {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; 
+    font-size: 0.9rem; 
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: auto; 
+    align-self: flex-end; 
+  }
+
+  .contact-button1:hover {
+    background-color: #5a32a3;
+    transform: translateY(-2px);
   }
