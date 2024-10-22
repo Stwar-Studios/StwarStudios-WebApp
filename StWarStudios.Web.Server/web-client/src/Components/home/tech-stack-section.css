@@ -3,6 +3,10 @@
     padding-bottom: 3.0rem;
     padding-top: 2.0rem;
   }
+
+  .title {
+    text-align: center;
+  }
   
   .icons {
     display: flex;

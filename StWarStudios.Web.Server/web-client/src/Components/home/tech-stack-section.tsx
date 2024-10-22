@@ -12,7 +12,7 @@ function TechStackSection()
  return <>
     <Element name="tech-stack" className="tech-stack text-white" > 
         <div className="container">
-          <h1>Nuestro stack tecnol&oacute;gico</h1>
+          <h1 className='title'>Nuestro stack tecnol&oacute;gico</h1>
           <div className="icons">
             <div data-tooltip-id="blazor-tooltip" data-tooltip-content="Blazor">
               <SiBlazor className="icon blazor" size={iconSize} />
