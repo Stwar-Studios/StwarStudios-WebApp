@@ -13,12 +13,10 @@ const HomePage = () => {
       {/* Sección del video */}
       <PrimarySection></PrimarySection>
       <ServicesSection></ServicesSection>
-      {/* <CompanyDescSection></CompanyDescSection>
+      <CompanyDescSection></CompanyDescSection>
       <TechStackSection></TechStackSection>
       <UsDescSection></UsDescSection>
-      <ValuesDescSection></ValuesDescSection>  */}
-      {/* Sección de servicios */}
-      
+      <ValuesDescSection></ValuesDescSection> 
     </div>
   );
 };
