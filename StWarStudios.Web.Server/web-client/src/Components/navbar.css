@@ -160,13 +160,13 @@
 
 .navbar-contact-button {
     letter-spacing: 2px;  
-    background-color: #3787cf !important;
+    background-color: #6529d3 !important;
     color: #fff;
     padding: 10px 15px;
     font-size: 1rem; 
     border-radius: 10px !important;
     cursor: pointer;
-    --transition: background-color 0.3s, transform 0.2s;
+    
     font-weight: 700;
     text-decoration: none;
     padding: 10px 15px;
@@ -174,7 +174,7 @@
   }
 
   .navbar-contact-button.active {
-    color: #3787cf;
+    color: #6529d3;
     background-color: #fff !important;
 
   }

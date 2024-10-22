@@ -48,7 +48,7 @@ function NavBar() {
                                     </strong>
                                 </div>
                             </a>
-                            <a href='#toggle' className={`navbar-toggler ${expanded ? 'expanded' : ''}`} aria-controls="responsive-navbar-nav" onClick={() => setExpanded(!expanded)}>
+                            <a className={`navbar-toggler ${expanded ? 'expanded' : ''}`} aria-controls="responsive-navbar-nav" onClick={() => setExpanded(!expanded)}>
                                 {expanded ? <FaTimes size={30} /> : <FaBars />}
                             </a>
                         </div>
@@ -64,10 +64,13 @@ function NavBar() {
                                     <NavLink to="/portafolio" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Portafolio
                                     </NavLink>
+                                    <NavLink to="/us-page" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                        Nosotros
+                                    </NavLink>
                                 </div>
                             </nav>
                             <div className='contact-btn'>
-                                <NavLink to='/contact' className={`${ isHome ? 'navbar-contact-button-home' : 'navbar-contact-button'} ${isContact ? 'active menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                <NavLink to='/contact' className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border' : ''}`} onClick={() => setExpanded(false)}>
                                     <span>Contact us</span>
                                 </NavLink>
                             </div>
