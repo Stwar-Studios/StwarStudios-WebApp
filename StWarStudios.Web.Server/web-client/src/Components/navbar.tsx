@@ -67,7 +67,7 @@ function NavBar() {
                                 </div>
                             </nav>
                             <div className='contact-btn'>
-                                <NavLink to='/contact' className={`${ isHome ? 'navbar-contact-button-home' : 'navbar-contact-button'} ${isContact ? 'active menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                <NavLink to='/contact' className={`navbar-contact-button ${ isHome ? 'home-active' : ''} ${isContact ? 'contact-active menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                     <span>Contact us</span>
                                 </NavLink>
                             </div>

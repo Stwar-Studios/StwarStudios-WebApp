@@ -139,60 +139,65 @@
     color: #fff !important;
 }
 
-.navbar-contact-button-home
+.navbar-contact-button
 {
     font-family: 'Lexend';
-    background: transparent;
-    border: 2px solid #3787cf;
-    color: white;
     font-weight: 700;
     text-decoration: none;
     padding: 10px 15px;
     text-transform: uppercase;
-    border-radius: 10px !important;  
     letter-spacing: 2px;  
-    --transition: background-color 0.3s, transform 0.2s;
-}
-.navbar-contact-button-home:hover {
-    background-color: #3787cf !important;
-    color: #fff;
-}
-
-.navbar-contact-button {
-    letter-spacing: 2px;  
-    background-color: #3787cf !important;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 1rem; 
-    border-radius: 10px !important;
     cursor: pointer;
-    --transition: background-color 0.3s, transform 0.2s;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 10px 15px;
-    text-transform: uppercase;
-  }
+    transition: background-color 0.3s, transform 0.2s;
+    border-radius: 10px !important;   
+}
 
-  .navbar-contact-button.active {
-    color: #3787cf;
-    background-color: #fff !important;
+/* font-family: 'Lexend';
+background: transparent;
+border: 2px solid #3787cf;
+color: white;
+font-weight: 700;
+text-decoration: none;
+padding: 10px 15px;
+text-transform: uppercase;
+border-radius: 10px !important;  
+letter-spacing: 2px;  
+--transition: background-color 0.3s, transform 0.2s; */
+.navbar-contact-button.home-active {
+    background-color: transparent !important;
+    color: #fff;    
+    border: 2px solid #3787cf;
+}
 
-  }
-
-  /* Efecto hover para el botón */
-  .navbar-contact-button:hover {
-    background-color: #5a32a3;
-    transform: translateY(-2px);
+   /* Efecto hover para el botón */
+   .navbar-contact-button.home-active:hover {
     background-color: #fff !important;
     color: #3787cf !important;
-    border: 2px solid #3787cf !important;
-    letter-spacing: 3px; 
+    border: 2px solid #3787cf;
+  }
+  .navbar-contact-button.contact-active {
+    color: #3787cf;
+    background-color: transparent !important;
+
   }
 
-  .navbar-contact-button.active:hover  {
-    color: #3787cf;
-    letter-spacing: 2px; 
-    transform: translateY(0px);
+  .navbar-contact-button:not(.home-active):not(.contact-active)  {
+    color: white;
+    background: #3787cf;    
+    border: 2px solid white;
+  }
+
+  .navbar-contact-button:not(.home-active):not(.contact-active):hover  {
+    color: #3787cf !important;
+    background: white;
+    transform: translateY(2px) !important;
+    border: 2px solid #3787cf;
+  }
+
+  .navbar-contact-button.contact-active:hover  {
+    color: #3787cf !important;
+    background: transparent;
+    transform: translateY(-2px) !important;
   }
 
 .navbar-menu-header {
