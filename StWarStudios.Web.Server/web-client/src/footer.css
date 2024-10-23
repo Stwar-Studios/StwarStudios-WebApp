@@ -1,18 +1,24 @@
 .footer {
-    background-color: #000; 
-    color: white; 
-    text-align: center; 
-    padding: 20px 0;
-    width: 100%;
-    margin-top: 0.7rem; 
-  }  
-  
-  .footer-link {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .footer-link:hover {
-    text-decoration: underline;
-  }
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contact-section {
+  flex: 1;
+}
