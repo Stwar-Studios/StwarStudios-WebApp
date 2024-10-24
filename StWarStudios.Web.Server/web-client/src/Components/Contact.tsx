@@ -21,9 +21,8 @@ const Contact: React.FC = () => {
             </p>
             <br />
           <ul className="icon-list">
-            <li><i className="fas fa-user"></i> thenatureguardians@gmail.com</li>
-            <li><i className="fas fa-phone"></i> 972 254-6073</li>
-            <li><i className="fas fa-home"></i> 601 254-6073</li>
+            <li><i className="fas fa-user"></i> contact@stwarstudios.com</li>
+            <li><i className="fas fa-phone"></i> (+57) 316 9352239</li>
           </ul>
         </div>
         <div className="form-section">
