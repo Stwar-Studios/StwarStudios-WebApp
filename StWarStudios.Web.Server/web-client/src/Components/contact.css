@@ -1,0 +1,237 @@
+.contact-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: -50px;
+}
+
+.image-section {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    min-height: 100vh; 
+}
+
+.image-overlay {
+    position: absolute;
+    top: -30px; 
+    left: 0;
+    width: 100%;
+    height: 132%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    position: relative; 
+    z-index: 2;
+    margin-top: 100px; 
+}
+
+.main-title {
+    font-size: 3.2rem;
+    color: #fff; 
+    margin-bottom: 30px;
+    text-align: center; 
+}
+
+.main-subtitle {
+    font-size: 1.2rem;
+    color: #fff; 
+    margin-bottom: -120px;
+    text-align: center; 
+}
+
+.contact-title {
+    font-weight: bold;
+    color: #6f42c1;
+}
+
+.text-section {
+    position: relative;
+    text-align: left;
+    z-index: 2; 
+    font-size: 1em;
+    color: #fff;
+    margin: 0 auto;
+    padding: 30px;
+    width: 50%; 
+    right: -6%;
+    margin-top: -1%;
+}
+
+.form-section {
+    position: relative;
+    z-index: 2; 
+    color: #fff;
+    margin: 0 auto;
+    padding: 190px;
+    width: 55%; 
+    margin-top: 0%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-input {
+    width: 100%;
+    padding: 3px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.contact-textarea {
+    width: 100%;
+    height: 80px;
+    padding: 3px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.contact-button1 {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    padding: 5px 0px;
+    width: 100px;
+    margin-left: auto;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-button1:hover {
+    background-color: #5a32a3;
+    transform: translateY(-2px);
+}
+
+.icon-list {
+    list-style: none; 
+    padding: 0; 
+    text-align: justify;
+    margin-left: 0;
+    margin-bottom: 20px; 
+}
+
+.icon-list li {
+    margin-bottom: 10px; 
+    font-size: 1rem; 
+    color: #ffffff;
+}
+
+.icon-list li i {
+    margin-right: 8px; 
+    color: #6f42c1;
+}
+
+@media (max-width: 768px) {
+    .text-section,
+    .form-section {
+        width: 90%; 
+        padding: 20px; 
+    }
+
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-title {
+        font-size: 2rem; 
+    }
+
+    .main-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0; 
+    }
+
+    .contact-button1 {
+        width: 80%; 
+        padding: 10px;
+    }
+
+    .background-image,
+    .image-overlay {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .text-section,
+    .form-section {
+        width: 70%; 
+        padding: 40px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .main-subtitle {
+        font-size: 1.1rem; 
+    }
+
+    .background-image,
+    .image-overlay {
+        height: 100vh; 
+    }
+}
+
+@media (max-width: 480px) {
+    .text-section,
+    .form-section {
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .main-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .contact-button1 {
+        width: 100%; 
+        font-size: 0.9rem; 
+        border-radius: 10px;
+    }
+
+    .icon-list {
+        font-size: 0.9rem;
+    }
+
+    .background-image,
+    .image-overlay {
+        height: 100vh; 
+    }
+}

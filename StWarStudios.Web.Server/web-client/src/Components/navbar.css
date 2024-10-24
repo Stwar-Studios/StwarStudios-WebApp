@@ -174,25 +174,9 @@
   }
 
   .navbar-contact-button.active {
-    color: #3787cf;
-    background-color: #fff !important;
+    color: #ffffff;
+    background-color: transparent !important;
 
-  }
-
-  /* Efecto hover para el botón */
-  .navbar-contact-button:hover {
-    background-color: #5a32a3;
-    transform: translateY(-2px);
-    background-color: #fff !important;
-    color: #3787cf !important;
-    border: 2px solid #3787cf !important;
-    letter-spacing: 3px; 
-  }
-
-  .navbar-contact-button.active:hover  {
-    color: #3787cf;
-    letter-spacing: 2px; 
-    transform: translateY(0px);
   }
 
 .navbar-menu-header {
