@@ -1,11 +1,13 @@
 .footer {
-    background-color: #000; 
-    color: white; 
-    text-align: center; 
-    padding: 20px 0;
-    width: 100%;
-    margin-top: 0.7rem; 
-  }  
+  position: relative;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  z-index: 10 !important;
+  margin-top: auto;
+}
   
   .footer-link {
     color: #ffffff;
