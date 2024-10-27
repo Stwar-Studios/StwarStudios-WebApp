@@ -6,6 +6,7 @@ import ServicesSection from './home/services-section';
 import TechStackSection from './home/tech-stack-section';
 import UsDescSection from './home/us-desc-section';
 import ValuesDescSection from './home/values-desc-section';
+import ContactComponent from './Contact';
 
 const HomePage = () => {
   return (
@@ -13,10 +14,12 @@ const HomePage = () => {
       {/* Sección del video */}
       <PrimarySection></PrimarySection>
       <ServicesSection></ServicesSection>
+      <hr/>
       <CompanyDescSection></CompanyDescSection>
       <TechStackSection></TechStackSection>
       <UsDescSection></UsDescSection>
       <ValuesDescSection></ValuesDescSection> 
+      <ContactComponent></ContactComponent>
     </div>
   );
 };

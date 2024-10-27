@@ -3,6 +3,11 @@ import React, { useState, useEffect  } from "react";
 import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
+import { scroller } from 'react-scroll';
+
+
+
+
 function NavBar() {    
     const location = useLocation();
     const isHome = location.pathname === '/'; 
@@ -31,7 +36,14 @@ function NavBar() {
             document.body.style.overflow = 'auto';
         }
     }, [expanded]);
-
+    const scrollToSection = (section : string) => {
+        setExpanded(false);
+        scroller.scrollTo(section, {
+          duration: 500,
+          delay: 0,
+          smooth: 'easeIn'
+        });
+      };
     return (
         
         <header className='header'>
@@ -55,21 +67,34 @@ function NavBar() {
                         <div className={`navbar-collapse ${expanded ? 'show' : ''}`} id="responsive-navbar-nav">
                             <nav className="me-auto w-100 navbar-nav">
                                 <div className='navbar-nav'>
-                                    <NavLink to="/" className={({ isActive }) => `navbar-item p-2 ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                    {/* <NavLink to="/" className={({ isActive }) => `navbar-item p-2 ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Home
-                                    </NavLink>
-                                    <NavLink to="/services" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                    </NavLink> */}
+                                    {/* <NavLink to="/services" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Servicios
                                     </NavLink>
                                     <NavLink to="/portafolio" className={({ isActive }) => `navbar-item p-2  ${isActive ? 'menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
                                         Portafolio
-                                    </NavLink>
+                                    </NavLink> */}
+
+                                
+                                <a href='#services-section' className='navbar-item p-2'  onClick={() =>scrollToSection('services')}>
+                                    <span>Services</span>
+                                </a>
+                                <a href='#tech-stack' className='navbar-item p-2'  onClick={() =>scrollToSection('tech-stack')}>
+                                    <span>Tech Stack</span>
+                                </a>
+                                <a href='#values-desc' className='navbar-item p-2'  onClick={() =>scrollToSection('values-desc')}>
+                                    <span>Values</span>
+                                </a>
+                                <div>
+                            </div>
                                 </div>
                             </nav>
                             <div className='contact-btn'>
-                                <NavLink to='/contact' className={`${ isHome ? 'navbar-contact-button-home' : 'navbar-contact-button'} ${isContact ? 'active menu-item-border-primary' : ''}`} onClick={() => setExpanded(false)}>
+                                <a href='#contact-section' className={`${ isHome ? 'navbar-contact-button-home' : 'navbar-contact-button'} ${isContact ? 'active menu-item-border-primary' : ''}`} onClick={() =>scrollToSection('contact-section')}>
                                     <span>Contact us</span>
-                                </NavLink>
+                                </a>
                             </div>
                         </div>
                     </div>

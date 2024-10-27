@@ -258,6 +258,27 @@
     background-color: #5a32a3;
     transform: translateY(-2px);
 }
+
+.icon-list {
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+.icon-list li {
+    margin-bottom: 10px;
+    margin-left: 1em;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.icon-list li i {
+    margin-right: 8px;
+    color: #6f42c1;
+}
+
 @media (max-width: 1850px) {
     .contact-content{
         margin: 1.5em;

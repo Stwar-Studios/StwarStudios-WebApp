@@ -1,10 +1,10 @@
 import './contact.css';
 import * as React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-const Contact: React.FC = () => {
-  return (
-    <div className="contact-section">     
+import { Element } from 'react-scroll';
+const ContactComponent: React.FC = () => {
+  return ( 
+    <Element name="contact-section" className="contact-section" > 
       <img src="/images/guys.jpg" alt="Fondo" className="background-image" />
       <div className="contact-overlay"></div>
       <div className="title-container">
@@ -38,8 +38,8 @@ const Contact: React.FC = () => {
             </form>
           </div>          
         </section>
-    </div>
+    </Element>
   );
 };
 
-export default Contact;
+export default ContactComponent;

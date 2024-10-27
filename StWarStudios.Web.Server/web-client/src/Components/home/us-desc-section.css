@@ -1,19 +1,32 @@
 
 
 .us-desc {
+  width: 100%;
     background: #f4f3f1;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding: 9em;
+    padding-left: 15em;
   }
   
   .us-desc h1 {
     font-family: 'Lexend';
+    margin-bottom: 2em;
   }
   
   .us-content {  
     text-align: start;
     font-family: 'Manrope';
+    max-width: 700px;
+    flex: 1 0;
+    --display: flex;
+    flex-direction: column;
   }
   
-  .us {
+  .us-title {
     justify-content: start;
     
     width: fit-content; /* El ancho se ajusta al contenido */
@@ -26,4 +39,62 @@
     position: absolute;
     top: 70%;
     left: -14%;
+  }
+  .us-icon
+  {
+    margin-left: 7em;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+  }
+
+  .us-icon svg
+  {
+    min-width: 300px;
+  }
+
+  @media (max-width: 1240px) {
+    .us-desc {
+      padding: 7.5em;
+    }
+  }  
+  @media (max-width: 970px) {
+    .us-desc {
+      padding: 5.5em;
+    }
+  .us-icon
+  {
+    margin-left: 3em;
+  }
+  .us-icon svg
+  {
+    min-width: 240px;
+  }
+}
+  @media (max-width: 860px) {
+    .us-desc {
+      padding: 3.5em;
+    }
+  }
+  @media (max-width: 760px) {
+    .us-desc {
+      padding: 2.5em;
+      flex-direction: column-reverse;
+      align-items: center;
+
+    }
+    .us-icon svg
+    {
+      min-width: 100px;
+    }
+    .us-icon
+  {
+    margin-left: 0em;
+  }
+  .us-title
+  {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
   }

@@ -1,6 +1,11 @@
 .company-desc {
     font-family: Lexend;  
     text-align: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3em;
   }
   
   .company-desc .desc-content {  
@@ -9,4 +14,8 @@
     text-align: justify;
   }
 
+  .company-desc .desc-content
+  {
+    max-width: 1000px;
+  }
   
