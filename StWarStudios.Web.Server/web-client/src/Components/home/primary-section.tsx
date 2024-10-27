@@ -24,14 +24,12 @@ function PrimarySection()
           <h3 className="home-sub-title mb-4 text-wrap">Empodera tu negocio con las mejores e innovadoras soluciones tecnol&oacute;gicas</h3>
           <div className="video-button">
             {/* <Button variant='outline-light' className="stw-btn-primary" onClick={() =>scrollToSection('services')} >M&aacute;s informaci&oacute;n</Button> */}
-            <a href="contact" className="video-button">Contact Us</a>
+            <a href="#contact-section" className="video-button" onClick={() =>scrollToSection('contact-section')}>Contact Us</a>
           </div>
         </div>      
         <div  className="arrow-down">
-          <a href="#services" onClick={() =>scrollToSection('services')}><FaAngleDown  size={30}/></a>
+          <a title="services" href="#services" onClick={() =>scrollToSection('services')}><FaAngleDown  size={30}/></a>
         </div>
-        
-      
     </section>      
   </>;
 }

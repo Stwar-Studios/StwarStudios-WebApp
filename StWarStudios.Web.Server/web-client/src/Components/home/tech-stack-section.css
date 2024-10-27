@@ -4,14 +4,16 @@
     padding-top: 2.0rem;
   }
   
-  .icons {
+  .tech-stack .icons {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin-top: 3.0rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
   }
   
-  .icon {
+  .tech-stack .icon {
     background: -webkit-linear-gradient(top, #926178 0%, #a63ac7 100%); /* Degradado para navegadores webkit */
     background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%); /* Degradado para navegadores estándar */
     -webkit-background-clip: text; /* Recorte de fondo para navegadores webkit */
@@ -22,26 +24,26 @@
     cursor: pointer;
   }
   
-  .combined-icon {
+  .tech-stack .combined-icon {
     position: relative;
   }
   
-  .overlay-icon {
+  .tech-stack .overlay-icon {
     position: absolute;
     bottom: -25%;
     right: -15%;
     color: #008AD7; /* Color para el icono de nube */
   }
   
-  .blazor {
+  .tech-stack .blazor {
     color: #512BD4;
   }
   
-  .azure {
+  .tech-stack .azure {
     color: #008AD7;
   }
   
-  .dotnet {
+  .tech-stack .dotnet {
     color: #fff;
     border: #008AD7;
     background: #512BD4;
@@ -51,15 +53,15 @@
     padding: 12px;
   }
   
-  .react {
+  .tech-stack .react {
     color: #61DAFB;
   }
   
-  .angular {
+  .tech-stack .angular {
     color: #fff;
   }
   
-  .sql {
+  .tech-stack .sql {
     color: #c2226c;
   }
   
