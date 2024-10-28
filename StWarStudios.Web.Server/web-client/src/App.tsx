@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'reset-css';
 import { Routes, Route } from 'react-router-dom';
