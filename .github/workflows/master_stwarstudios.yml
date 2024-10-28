@@ -15,7 +15,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+          
+      - name: Build React project
+        run: |
+          cd ./StWarStudios.Web.Server/web-client
+          npm install  # install dependencies
+          npm run build  # Compile project      
+          
+      - name: Copy React build to .NET wwwroot
+        run: |
+          mkdir -p ./StWarStudios.Web.Server/wwwroot  # Crear el directorio wwwroot si no existe
+          rm -rf ./StWarStudios.Web.Server/wwwroot/*  # Limpiar archivos existentes en wwwroot
+          cp -R ./StWarStudios.Web.Server/web-client/build/* ./StWarStudios.Web.Server/wwwroot/  # Copiar el build de React a wwwroot
 
+      - name: Verify directory structure
+        run: |
+          echo "Listing contents of StWarStudios.Web.Server:"
+          ls -R ./StWarStudios.Web.Server/wwwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server
+          
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
