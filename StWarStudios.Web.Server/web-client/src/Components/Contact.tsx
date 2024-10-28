@@ -10,7 +10,8 @@ const ContactComponent: React.FC = () => {
   useEffect(() => {
     // Función para hacer la solicitud GET
     const fetchData = () => {
-      fetch('v1/api/Contact')
+      const apiUrl = `${process.env.REACT_APP_API_URL}v1/api/contact`;
+      fetch( apiUrl)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Error en la red');

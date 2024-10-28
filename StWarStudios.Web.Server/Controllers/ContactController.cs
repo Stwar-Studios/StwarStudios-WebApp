@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StWarStudios.Data;
 using StWarStudios.Data.Entities;
 
@@ -21,9 +22,12 @@ namespace StWarStudios.Web.Server.Controllers
 
         // GET: api/<ContactController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            var response = await _dbContext.Contacts.AsNoTracking().ToListAsync();
+
+
+            return Ok(response);
         }
 
         // POST api/<ContactController>

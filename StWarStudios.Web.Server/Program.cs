@@ -31,12 +31,20 @@ namespace StWarStudios.Web.Server
             builder.Logging.AddConsole();
 
             string reactAppOrigin = "https://localhost:5173";
+            string reactAppOriginProd = "https://stwarstudios.com:5000";
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowReactApp", policy =>
+                options.AddPolicy("AllowReactApp-Dev", policy =>
                 {
                     policy.WithOrigins(reactAppOrigin)
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+
+                options.AddPolicy("AllowReactApp-Prod", policy =>
+                {
+                    policy.WithOrigins(reactAppOriginProd)
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
@@ -63,13 +71,17 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
-
-            app.UseEndpoints(endpoints =>
+            if (app.Environment.IsDevelopment())
             {
-                endpoints.MapControllers();
-            });
-            app.UseCors("AllowReactApp");
+                app.UseCors("AllowReactApp-Dev");
+            }
+            else
+            {
+                app.UseCors("AllowReactApp-Prod");
+            }
+                
+            app.MapControllers();
+
             app.MapFallbackToFile("/index.html");
 
             app.Run();
