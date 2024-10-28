@@ -4,9 +4,9 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Element } from 'react-scroll';
 
 const ContactComponent: React.FC = () => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  //const [data, setData] = useState(null);
+  //const [error, setError] = useState(null);
+  //const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Función para hacer la solicitud GET
     const fetchData = () => {
@@ -18,13 +18,14 @@ const ContactComponent: React.FC = () => {
           return response.json();
         })
         .then((data) => {
-          setData(data);
-          setLoading(false);
+          //setData(data);
+          //setLoading(false);
           console.log(data);
         })
-        .catch((error) => {
-          setError(error.message);
-          setLoading(false);
+          .catch((error) => {
+              console.log(error);
+          //setError(error.message);
+          //setLoading(false);
         });
     };
 
