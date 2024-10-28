@@ -1,5 +1,5 @@
 import './contact.css';
-import React, { useState, useEffect  } from "react";
+import React, { useEffect  } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Element } from 'react-scroll';
 
