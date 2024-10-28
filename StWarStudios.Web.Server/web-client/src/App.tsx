@@ -1,18 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'reset-css';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './Components/homepage';
+import NavBar from './Components/navbar';
+// import ContactComponent from './Components/Contact';
+// import Services from './Components/Services';
+// import Portafolio from './Components/Portafolio';
+import Footer from './Footer';  
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Site under construction
-        </p>
-
-      </header>
-    </div>
+    <>
+    <NavBar /> 
+      <div className='App'>
+      <Routes>
+            <Route path="/" element={<HomePage />} />
+            {/* <Route path="/Services" element={<Services />} />
+            <Route path="/Portafolio" element={<Portafolio />} />
+            <Route path="/Contact" element={<ContactComponent />} /> */}
+          </Routes>          
+      </div>
+      <Footer />     
+    </>
   );
 }
 

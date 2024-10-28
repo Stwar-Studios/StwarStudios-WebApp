@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+github/
+/.github/workflows/azure-static-web-apps-happy-sea-0fc45bd10.yml
