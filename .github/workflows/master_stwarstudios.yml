@@ -27,6 +27,11 @@ jobs:
           npm install  # install dependencies
           npm run build  # Compile project      
           
+      - name: Copy React build to .NET wwwroot
+        run: |
+          rm -rf ./StWarStudios.Web.Server/wwwroot/*  # Limpiar archivos existentes en wwwroot
+          cp -R ./StWarStudios.Web.Server/web-client/build/* ./StWarStudios.Web.Server/wwwroot/  # Copiar el build de React a wwwroot  
+
       - name: Verify directory structure
         run: |
           echo "Listing contents of StWarStudios.Web.Server:"
