@@ -33,22 +33,22 @@ namespace StWarStudios.Web.Server
             string reactAppOrigin = "https://localhost:5173";
             string reactAppOriginProd = "https://stwarstudios.com";
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowReactApp-Dev", policy =>
-                {
-                    policy.WithOrigins(reactAppOrigin)
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
-                });
+            //builder.Services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowReactApp-Dev", policy =>
+            //    {
+            //        policy.WithOrigins(reactAppOrigin)
+            //              .AllowAnyHeader()
+            //              .AllowAnyMethod();
+            //    });
 
-                options.AddPolicy("AllowReactApp-Prod", policy =>
-                {
-                    policy.WithOrigins(reactAppOriginProd)
-                          .AllowAnyHeader()
-                          .AllowAnyMethod();
-                });
-            });
+            //    options.AddPolicy("AllowReactApp-Prod", policy =>
+            //    {
+            //        policy.WithOrigins(reactAppOriginProd)
+            //              .AllowAnyHeader()
+            //              .AllowAnyMethod();
+            //    });
+            //});
 
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())
@@ -71,14 +71,14 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseCors("AllowReactApp-Dev");
-            }
-            else
-            {
-                app.UseCors("AllowReactApp-Prod");
-            }
+            //if (app.Environment.IsDevelopment())
+            //{
+            //    app.UseCors("AllowReactApp-Dev");
+            //}
+            //else
+            //{
+            //    app.UseCors("AllowReactApp-Prod");
+            //}
                 
             app.MapControllers();
 
