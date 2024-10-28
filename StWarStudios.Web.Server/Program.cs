@@ -1,4 +1,8 @@
 
+using Microsoft.EntityFrameworkCore;
+using StWarStudios.Data;
+using System;
+
 namespace StWarStudios.Web.Server
 {
     public class Program
@@ -14,8 +18,38 @@ namespace StWarStudios.Web.Server
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString)
+                .EnableDetailedErrors()
+                .EnableSensitiveDataLogging();
+                //.UseSnakeCaseNamingConvention();
+            });
+
+            builder.Logging.AddConsole();
+
+            string reactAppOrigin = "https://localhost:5173";
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowReactApp", policy =>
+                {
+                    policy.WithOrigins(reactAppOrigin)
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
+            var app = builder.Build();
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<AppDbContext>();
+                context.Database.Migrate();
+            }
+            
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
@@ -25,14 +59,17 @@ namespace StWarStudios.Web.Server
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-
+            app.UseRouting();
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
 
-            app.MapControllers();
-
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+            app.UseCors("AllowReactApp");
             app.MapFallbackToFile("/index.html");
 
             app.Run();
