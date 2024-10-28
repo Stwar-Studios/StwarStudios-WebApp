@@ -31,7 +31,7 @@ namespace StWarStudios.Web.Server
             builder.Logging.AddConsole();
 
             string reactAppOrigin = "https://localhost:5173";
-            string reactAppOriginProd = "https://stwarstudios.com:5000";
+            string reactAppOriginProd = "https://stwarstudios.com";
 
             builder.Services.AddCors(options =>
             {
