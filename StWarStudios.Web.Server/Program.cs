@@ -27,8 +27,9 @@ namespace StWarStudios.Web.Server
                 .EnableSensitiveDataLogging();
                 //.UseSnakeCaseNamingConvention();
             });
-
+            builder.Logging.ClearProviders();
             builder.Logging.AddConsole();
+            builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
             string reactAppOrigin = "https://localhost:5173";
             string reactAppOriginProd = "https://stwarstudios.com";
