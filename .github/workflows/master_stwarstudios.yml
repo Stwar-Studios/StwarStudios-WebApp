@@ -75,4 +75,7 @@ jobs:
           app-name: 'StwarStudios'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_080CEC56EE9D4EE495A60CDB4FD35EBD }}
-          package: ./myapp
+          package: ${{env.DOTNET_ROOT}}/myapp
+
+      - name: List published files
+        run: ls -R ./StWarStudios.Web.Server/myapp
