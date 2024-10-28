@@ -1,0 +1,89 @@
+
+
+.values-desc {
+    padding: 4.0rem;
+    margin-left: 15em;
+    margin-right: 15em;
+    font-family: 'Lexend';
+    margin-bottom: 15em;
+  }
+
+  .values-desc h1{
+    font-size: 3em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .desc-content {
+    gap: 2.0rem;
+    padding: 2.0rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  .values-item h1, h2, .values-desc container h1 {
+    font-family: 'Lexend';
+  }
+  .values-item h2
+  {
+    font-size: 2.4em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .values-item {
+    /* border-radius: 20px;
+    border: 3px solid #ccc;
+    padding: 2em 3em; */
+    max-width: 16em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Manrope';
+  }
+  
+  .value-body {
+    height: 40%;
+  }
+  
+
+  @media (max-width: 1900px) {
+
+    .values-desc {
+      padding: 0rem;
+      margin-left: 4em;
+      margin-right: 4em;
+    }
+
+    .desc-content {
+      padding: 0;
+      margin-top: 7em;
+    }
+  }
+
+  
+  @media (max-width: 690px) {
+    .values-item {
+      margin-top: 5em;
+    }
+    .values-desc {
+      padding: 2rem;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    .values-desc h1{
+      margin-bottom: 0em;
+    }
+    .desc-content {
+      padding: 0;
+      margin-top: 3em;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+}

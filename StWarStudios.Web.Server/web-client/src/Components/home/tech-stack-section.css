@@ -1,0 +1,67 @@
+.tech-stack {
+    background-color: #1a1a1a;
+    padding-bottom: 3.0rem;
+    padding-top: 2.0rem;
+  }
+  
+  .tech-stack .icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 3.0rem;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .tech-stack .icon {
+    background: -webkit-linear-gradient(top, #926178 0%, #a63ac7 100%); /* Degradado para navegadores webkit */
+    background: linear-gradient(to bottom, #e72c83 0%, #a742c6 100%); /* Degradado para navegadores estándar */
+    -webkit-background-clip: text; /* Recorte de fondo para navegadores webkit */
+    -moz-background-clip: text; /* Recorte de fondo para navegadores Mozilla */
+    background-clip: text; /* Recorte de fondo estándar */
+    -webkit-text-fill-color: transparent; /* Color de texto transparente para navegadores webkit */
+    -moz-text-fill-color: transparent; /* Color de texto transparente para navegadores Mozilla */
+    cursor: pointer;
+  }
+  
+  .tech-stack .combined-icon {
+    position: relative;
+  }
+  
+  .tech-stack .overlay-icon {
+    position: absolute;
+    bottom: -25%;
+    right: -15%;
+    color: #008AD7; /* Color para el icono de nube */
+  }
+  
+  .tech-stack .blazor {
+    color: #512BD4;
+  }
+  
+  .tech-stack .azure {
+    color: #008AD7;
+  }
+  
+  .tech-stack .dotnet {
+    color: #fff;
+    border: #008AD7;
+    background: #512BD4;
+    border-radius: 50%; /* Hace que el div sea redondo */
+    border: 5px solid #512BD4; /* Borde del círculo */
+    display: inline-block;
+    padding: 12px;
+  }
+  
+  .tech-stack .react {
+    color: #61DAFB;
+  }
+  
+  .tech-stack .angular {
+    color: #fff;
+  }
+  
+  .tech-stack .sql {
+    color: #c2226c;
+  }
+  

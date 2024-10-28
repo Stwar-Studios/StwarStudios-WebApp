@@ -1,0 +1,257 @@
+/* Estilos para la sección del video
+.video-section {
+    position: relative;
+    height: 90vh; 
+    height: 90vh; 
+  }
+  
+  .video-section video {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.748); 
+    z-index: 2;
+  }
+  
+  .video-text {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    color: #f8f9fa;
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 100%;
+    padding: 50px 0 !important; 
+  }
+  
+  
+  .home-title {
+    font-size: 4rem; 
+    font-weight: bold;
+    margin-bottom: 3% !important;
+    text-align: center; 
+    width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .home-sub-title {
+    font-size: 2.5rem; 
+    font-weight: bold; 
+    color: #d6d6d6;
+    max-width: 70%; 
+    text-align: center; 
+    margin: 0; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+  }
+  
+  .video-button {
+    position: absolute; 
+    bottom: 50px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+  }
+  
+  .btn-more-info {
+    background-color: #6f42c1 !important;
+    color: white; 
+    border: none !important; 
+    padding: 0.65rem 1.7rem; 
+    font-size: 1.5rem; 
+    transition: background-color 0.3s; 
+    cursor: pointer; 
+  }
+  
+  .btn-more-info:hover {
+    background-color: #5a32a3 !important;
+  }
+  
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  #background-video {
+    width: 100%;
+    height: 100%;
+    z-index: 444;
+    object-fit: cover; 
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.5em;
+  } */
+
+  .video-showcase{
+    margin-top: -4.75rem;
+    position: relative;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: #111;
+    color: #fff;
+    z-index: 2;
+    transition: 0.5s;
+  }
+  .video-showcase.active
+  {
+    top: 200px;
+  }
+  .video-showcase video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+  }
+  .video-overlay
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #130a41;
+    mix-blend-mode: overlay;
+  }
+  .video-showcase .content
+  {
+    position: relative;
+    z-index: 10;
+  }
+  .video-showcase .content h2
+  {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-family: 'Lexend';
+  }
+  .video-showcase .content h3
+  {
+    font-size: 2.1em;
+    margin: 20px 0;    
+    font-weight: 400;
+    max-width: 700px;
+    font-family: 'Manrope';
+    margin-top: 50px;
+  }
+  
+.video-showcase .video-button>a
+{  
+  font-weight: 600;
+  display: inline-block;
+  font-size: 1em;
+  background: #3787cf;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.2s;
+  border-radius: 5px 5px;
+  border: 2px solid #fff;
+}
+.video-showcase .video-button>a:hover
+{
+  letter-spacing: 4.5px;
+  background: transparent;
+  border: 2px solid #3787cf;
+  color: white;
+  font-weight: 700;
+}
+
+.arrow-down 
+{
+  margin-top: 50px;
+  position: relative;  
+  bottom: -70px;
+  z-index: 12;   
+  width: 100%;  
+  cursor: pointer;
+}
+
+.arrow-down a{
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  padding: 10px 5px;
+  opacity: 0.7;  
+  transition: 0.15s;
+  font-family: 'Lexend';
+}
+
+.arrow-down a:hover{
+  border: 3px solid #3787cf; 
+  opacity: 0.9 ease;  
+}
+
+@media(max-width: 798px)
+{
+  .arrow-down 
+  {
+    margin-top: 80px;
+  }
+  .video-showcase
+  {
+    justify-content: flex-end;
+    align-items: flex-start;
+    
+  }
+  .video-showcase .content h2
+  {
+    font-size: 3.0em;
+  }
+
+  .video-showcase .content h3
+  {
+    font-size: 2.0em;
+  }
+}
