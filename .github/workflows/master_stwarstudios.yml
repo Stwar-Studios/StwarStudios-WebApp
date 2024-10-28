@@ -26,10 +26,13 @@ jobs:
           cd ./StWarStudios.Web.Server/web-client
           npm install  # install dependencies
           npm run build  # Compile project      
-          
+
+      - name: Clean existing files in wwwroot
+        run: Remove-Item -Recurse -Force ./StWarStudios.Web.Server/wwwroot/* 
+        shell: pwsh
+
       - name: Copy React build to .NET wwwroot
-        run: |
-          rm -rf ./StWarStudios.Web.Server/wwwroot/*  # Limpiar archivos existentes en wwwroot
+        run: |          
           cp -R ./StWarStudios.Web.Server/web-client/build/* ./StWarStudios.Web.Server/wwwroot/  # Copiar el build de React a wwwroot  
 
       - name: Verify directory structure
