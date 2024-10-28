@@ -20,6 +20,17 @@ jobs:
         with:
           node-version: '18'
           
+      - name: Build React project
+        run: |
+          cd ./StWarStudios.Web.Server/web-client
+          npm install  # install dependencies
+          npm run build  # Compile project
+
+      - name: Copy React build to .NET wwwroot
+        run: |
+          rm -rf ./StWarStudios.Web.Server/wwwroot/*  # Clear existing files in wwwroot
+          cp -R ./StWarStudios.Web.Server/web-client/build/* ./StWarStudios.Web.Server/wwwroot/  # Copy React build to wwwroot
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
