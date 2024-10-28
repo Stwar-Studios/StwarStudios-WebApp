@@ -35,8 +35,8 @@ jobs:
       - name: Verify directory structure
         run: |
           echo "Listing contents of StWarStudios.Web.Server:"
-          ls -R ./StWarStudios.Web.Server/wwwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server
-          
+          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
