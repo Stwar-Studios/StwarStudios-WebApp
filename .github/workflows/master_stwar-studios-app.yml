@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: PROD Build and deploy stwar-studios-app 
+name: PROD Build and deploy StwarStudios-app 
 
 on:
   push:
@@ -13,8 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
+    steps:      
       - uses: actions/checkout@v4
 
       - name: Set up .NET Core
