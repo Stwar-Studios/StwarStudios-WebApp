@@ -2,8 +2,6 @@ import './contact.css';
 import React, { useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Element } from 'react-scroll';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const ContactComponent: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +11,9 @@ const ContactComponent: React.FC = () => {
     topic: '',
     message: ''
   });
-  
+
   const [loading, setLoading] = useState(false);
+  const [overlayMessage, setOverlayMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,6 +23,7 @@ const ContactComponent: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setOverlayMessage('Enviando...');
 
     const apiUrl = `${process.env.REACT_APP_API_URL}v1/api/contact`;
 
@@ -41,15 +41,19 @@ const ContactComponent: React.FC = () => {
       return response.json();
     })
     .then((data) => {
-      toast.success(data.message);
-      setFormData({ name: '', email: '', phone: '', topic: '', message: '' });
+      console.log('Message sent successfully:', data.message);
+      setOverlayMessage('Listo'); 
+      setFormData({ name: '', email: '', phone: '', topic: '', message: '' }); 
     })
     .catch((error) => {
       console.error('Error:', error);
-      toast.error('There was a problem sending the message.');
+      setOverlayMessage('No se pudo enviar el formulario.'); 
     })
     .finally(() => {
       setLoading(false);
+      setTimeout(() => {
+        setOverlayMessage('');
+      }, 2000);
     });
   };
 
@@ -125,17 +129,17 @@ const ContactComponent: React.FC = () => {
           </div>          
         </section>
 
-      {/* Overlay de carga */}
-      {loading && (
+      {/* Overlay */}
+      {overlayMessage && ( 
         <div className="loading-overlay">
-          <div className="loading-message">Enviando...</div>
+          <div className="loading-message">{overlayMessage}</div>
         </div>
       )}
-
-      {/* Contenedor de notificaciones */}
-      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} closeOnClick />
     </Element>
   );
 };
 
 export default ContactComponent;
+
+
+
