@@ -299,7 +299,22 @@
     background: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
   }
-  
+
+  .error-message {
+    color: #f1f1f1;
+    font-size: 0.65rem; 
+    margin-top: 0.25rem; 
+    padding: 0.2rem;
+    background-color: rgba(148, 77, 255, 0.305); 
+    border-left: 4px solid #ff4d4d; 
+    border-radius: 4px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.error-message i {
+    color: #ff4d4d; 
+}
 
 @media (max-width: 1850px) {
     .contact-content{
