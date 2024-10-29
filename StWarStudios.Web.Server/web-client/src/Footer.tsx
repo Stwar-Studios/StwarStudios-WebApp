@@ -1,8 +1,12 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import './footer.css';
+import {AppVersion} from './Components/app-version';
+
+
 
 const Footer: React.FC = () => {
+  const version = AppVersion();
   return (
     <footer className="footer py-3 bg-dark text-white">
       <Container>
@@ -14,7 +18,11 @@ const Footer: React.FC = () => {
             <a href="/privacy" className="footer-link">Política de Privacidad</a> | 
             <a href="/terms" className="footer-link">Términos y Condiciones</a>
           </Col>
+          
         </Row>
+        <div className='version-info'>
+          <small className='ms-4'>Version: {version || 'Loading...'}</small>
+        </div>
       </Container>
     </footer>
   );

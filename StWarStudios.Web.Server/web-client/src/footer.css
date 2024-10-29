@@ -3,7 +3,7 @@
   background-color: #000;
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 30px;
   width: 100%;
   z-index: 10 !important;
   margin-top: auto;
@@ -17,4 +17,14 @@
   
   .footer-link:hover {
     text-decoration: underline;
+  }
+
+  .version-info
+  {
+    font-family: 'Lexend';
+    font-weight: 600;
+    margin: 1em;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 6.4em;
   }

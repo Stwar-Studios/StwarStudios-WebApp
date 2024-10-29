@@ -1,18 +1,27 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - StwarStudios
+name: PROD Build and deploy StwarStudios
 
 on:
   push:
     branches:
       - master
   workflow_dispatch:
+    inputs:
+        version:
+          description: publish Version
+          default: "0.1.0"
+          required: true
+  pull_request:
+    branches: [ master ]
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.set_version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -25,7 +34,22 @@ jobs:
           cd ./StWarStudios.Web.Server/web-client
           npm install  # install dependencies
           npm run build  # Compile project      
-          
+
+      - name: Create Version File
+        run: |
+          mkdir -p ./public
+          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt
+          echo "Build: ${{ github.run_number }}" >> ./public/version.txt
+
+      - name: Set version
+        id: set_version
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "version=${{ github.run_number }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=PR-${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
+          fi
+
       - name: Copy React build to .NET wwwroot
         run: |
           mkdir -p ./StWarStudios.Web.Server/wwwroot  # Crear el directorio wwwroot si no existe
@@ -35,7 +59,8 @@ jobs:
       - name: Verify directory structure
         run: |
           echo "Listing contents of StWarStudios.Web.Server:"
-          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server
+          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server      
+
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
