@@ -280,6 +280,43 @@
     font-size: 1.4em;
 }
 
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 1000;
+  }
+  
+  .loading-message {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+  }
+
+  .error-message {
+    color: #f1f1f1;
+    font-size: 0.65rem; 
+    margin-top: 0.25rem; 
+    padding: 0.2rem;
+    background-color: rgba(148, 77, 255, 0.305); 
+    border-left: 4px solid #ff4d4d; 
+    border-radius: 4px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.error-message i {
+    color: #ff4d4d; 
+}
+
 @media (max-width: 1850px) {
     .contact-content{
         margin: 1.5em;
@@ -375,7 +412,6 @@
         justify-content: center;
     }
 }
-
 
 @media (max-width: 470px) {
     .main-title
