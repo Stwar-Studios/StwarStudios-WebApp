@@ -1,8 +1,7 @@
+import './contact.css';
 import React, { useState } from "react";
 import ApiForm from "./home/ApiForm";
 import { Element } from 'react-scroll';
-import './contact.css';
-import './contact.css';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
 
 
