@@ -1,8 +1,12 @@
 import './contact.css';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
+import './contact.css';
+import React, { useState  } from "react";
+import { Element } from 'react-scroll';
+
 
 const ContactComponent: React.FC = () => {
-  const [successMessage, setSuccessMessage] = useState('');
+  const [successMessage] = useState('');
 
   return ( 
     <Element name="contact-section" className="contact-section" > 
@@ -34,7 +38,14 @@ const ContactComponent: React.FC = () => {
               {successMessage}
             </div>
           )}
-          <ApiForm onSuccess={setSuccessMessage} />
+           <form className="contact-form">
+            <input type="text" placeholder="Your name" className="contact-input" />
+            <input type="email" placeholder="Your email" className="contact-input" />
+            <input type="number" placeholder="Your phone number" className="contact-input" />
+            <input type="text" placeholder="Topic" className="contact-input" />
+            <textarea placeholder="Your message" className="contact-textarea"></textarea>
+            <button type="submit" className="contact-send-form">Enviar</button>
+          </form>
         </div>
       </section>
     </Element>
