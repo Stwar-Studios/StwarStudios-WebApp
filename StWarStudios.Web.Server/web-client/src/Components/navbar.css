@@ -8,6 +8,10 @@
     padding: 0 !important;
 }
 
+.navbar-brand img{
+    width: 68px;
+}
+
 .contact-btn
 {
     --position: absolute;
@@ -389,3 +393,31 @@
         padding: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .navbar-brand img{
+        width: 2em;
+    }
+    .stwar-title
+    {
+        font-size: 1em;
+    }
+
+    .stwar-studios-title
+    {
+        font-size: 0.76em;
+    }
+
+    .navbar-collapse 
+    {
+        transform: translateY(-150%);
+        display: none;
+    }
+    .navbar-collapse.show
+    {        
+        display: block;
+    }
+}
+
+  
+  

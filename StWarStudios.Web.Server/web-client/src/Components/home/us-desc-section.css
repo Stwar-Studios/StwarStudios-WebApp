@@ -98,3 +98,37 @@
     text-align: center;
   }
   }
+
+
+  @media (max-width: 470px) {
+    .us-desc {
+      align-items: center;
+      padding: 20px;
+    }
+    .us-content
+    {
+      margin-bottom: 1em;
+      padding: 14px;
+    }
+    .us-title h1
+    {
+      align-items: center;
+      text-align: center;
+      display: flex;
+    }
+    .us-icon, .us-content
+    {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .us-icon svg
+    {
+      width: 100px;
+      min-width: 30px;
+    }
+    .values-item h2 strong
+    {
+      font-size: 1em;
+    }
+}
