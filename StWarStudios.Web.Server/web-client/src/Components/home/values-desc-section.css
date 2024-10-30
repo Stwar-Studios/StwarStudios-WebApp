@@ -87,3 +87,29 @@
       align-items: center;
     }
 }
+
+@media (max-width: 470px) {
+  .values-desc{
+    padding: 10px;
+  }
+  .values-item
+  {    
+    margin-top: 2em;
+  }
+  .values-item svg
+  {
+    width: 3em;
+  }
+  .values-desc h1
+  {
+    font-size: 2em;
+  }
+  .values-desc h2
+  {
+    font-size: 1.4em;
+  }
+  .values-desc .value-body
+  {
+    font-size: 0.88em;
+  }
+}

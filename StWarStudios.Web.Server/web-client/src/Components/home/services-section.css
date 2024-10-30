@@ -154,7 +154,7 @@
     .service-card
     {       
         margin: 0px 80px;
-        max-width: 100%; /* Fixed width of 300px */
+        max-width: 320px; /* Fixed width of 300px */
     }
     .services-container
     {
@@ -166,6 +166,29 @@
     }
   }
   
-  @media (min-width: 1024px) {
+  @media (max-width: 770px) {
+    .services-container
+    {
+      margin: 0;
+      padding: 0;
+    }
 
-  }
+    .service-card
+    {
+      margin: 10px;
+    }
+
+    .services-section h2
+    {
+      font-size: 2em;
+    }
+
+    .services-section h3
+    {
+      font-size: 1.4em;
+    }
+    .services-section p
+    {
+      font-size: 1em;
+    }
+}

@@ -19,3 +19,12 @@
     max-width: 1000px;
   }
   
+  @media (max-width: 470px) {
+
+    .company-desc .desc-content
+    {
+      max-width: 1000px;
+      margin: 10px;
+      margin-bottom: 2em;
+    }
+}
