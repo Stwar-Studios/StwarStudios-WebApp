@@ -1,38 +1,8 @@
 import './contact.css';
-import React, { useEffect  } from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Element } from 'react-scroll';
+import { FaUser, FaWhatsapp } from 'react-icons/fa';
 
 const ContactComponent: React.FC = () => {
-  //const [data, setData] = useState(null);
-  //const [error, setError] = useState(null);
-  //const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    // Función para hacer la solicitud GET
-    const fetchData = () => {
-      const apiUrl = `${process.env.REACT_APP_API_URL}v1/api/contact`;
-      fetch( apiUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Error en la red');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          //setData(data);
-          //setLoading(false);
-          console.log(data);
-        })
-          .catch((error) => {
-              console.log(error);
-          //setError(error.message);
-          //setLoading(false);
-        });
-    };
-
-    fetchData();
-  }, []); // El arreglo vacío asegura que se ejecute una vez al montar el componente
-
+  const [successMessage, setSuccessMessage] = useState('');
 
   return ( 
     <Element name="contact-section" className="contact-section" > 
@@ -42,9 +12,9 @@ const ContactComponent: React.FC = () => {
         <h1 className="main-title">Lo increíble comienza aqu&iacute;</h1>
         <h2 className="main-subtitle">Es momento de construir el futuro que una vez te imaginaste.</h2>
       </div>
-      
-      <section className="contact-content">        
-          <div className="text-section">            
+
+      <section className="contact-content">
+      <div className="text-section">            
             <p>Escribenos</p>
             <h2 className="contact-title">Ponte en contacto</h2>
             <p className="contact-description">
@@ -54,21 +24,19 @@ const ContactComponent: React.FC = () => {
             </p>
             <br />
             <ul className="icon-list">
-              <li><i className="fas fa-user"></i> contact@stwarstudios.com</li>
-              <li><i className="fas fa-phone"></i> (+57) 316 9352239</li>
+              <li> <FaUser />contact@stwarstudios.com</li>
+              <li> <FaWhatsapp  />(+57) 316 9352239</li>
             </ul>
           </div>
-          <div className="form-section">
-            <form className="contact-form">
-              <input type="text" placeholder="Your name" className="contact-input" />
-              <input type="email" placeholder="Your email" className="contact-input" />
-              <input type="number" placeholder="Your phone number" className="contact-input" />
-              <input type="text" placeholder="Topic" className="contact-input" />
-              <textarea placeholder="Your message" className="contact-textarea"></textarea>
-              <button type="submit" className="contact-send-form">Enviar</button>
-            </form>
-          </div>          
-        </section>
+        <div className="form-section">
+          {successMessage && (
+            <div className="success-message">
+              {successMessage}
+            </div>
+          )}
+          <ApiForm onSuccess={setSuccessMessage} />
+        </div>
+      </section>
     </Element>
   );
 };

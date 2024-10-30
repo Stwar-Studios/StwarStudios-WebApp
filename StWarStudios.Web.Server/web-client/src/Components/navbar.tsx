@@ -52,7 +52,7 @@ function NavBar() {
                     <div className={`navbar-container ${expanded ? 'expanded' : ''}`} style={{ backgroundColor: `rgba(0, 0, 0, ${expanded ? 1 : scrollOpacity})`,  transition: 'background-color 0.3s ease' }}>
                         <div className={`navbar-menu-header ${expanded ? 'expanded' : ''}`} >
                             <a href="/" className='navbar-brand d-flex align-items-center'>
-                                <img src="images/logo.png" alt="logo" style={{ width: 68 }} />
+                                <img src="images/logo.png" alt="logo"/>
                                 <div className='ms-2 text-center d-flex flex-column align-items-start'>
                                     <div className='stwar-title mb-0'><strong>STWAR</strong></div>
                                     <strong className='stwar-studios-title'>
