@@ -7,7 +7,7 @@ import NavBar from './Components/navbar';
 // import ContactComponent from './Components/Contact';
 // import Services from './Components/Services';
 // import Portafolio from './Components/Portafolio';
-import Footer from './footer';  
+import Footer from './Footer';  
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function App() {
