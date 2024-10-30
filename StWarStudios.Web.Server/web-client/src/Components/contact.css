@@ -471,3 +471,62 @@
         font-size: 0.94em;
     }
 }
+
+
+@media (max-width: 470px) {
+    .main-title
+    {
+        font-size: 2em;
+    }
+    .main-subtitle
+    {
+        font-size: 1.3em;
+        padding: 1em;
+        margin-top: 2em;
+        margin-bottom: 0em;
+    }
+    .contact-title
+    {
+        font-size: 2em;
+    }
+    .contact-description
+    {
+        font-size: 0.85em;
+    }
+    .contact-content{
+        margin: 0em;
+        padding: 0.0em;
+        margin-top: 3em;
+    }
+    .text-section
+    {        
+        margin: 0em;
+        padding-left: 1em;
+        max-width: auto;
+        margin-top: 0em;
+    }
+    .contact-form
+    {
+        max-width: 100%;        
+        min-width: 300px;
+        padding: 0;
+        margin: 0;
+    }
+    .form-section
+    {
+        margin-top: 3em;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    .contact-description
+    {
+        margin-left: 20px;
+    }
+
+    .contact-input
+    {
+        padding: 0.35em;
+        font-size: 0.94em;
+    }
+}

@@ -5,6 +5,7 @@ import './contact.css';
 import './contact.css';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
 
+
 const ContactComponent: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -46,6 +47,3 @@ const ContactComponent: React.FC = () => {
 };
 
 export default ContactComponent;
-
-
-
