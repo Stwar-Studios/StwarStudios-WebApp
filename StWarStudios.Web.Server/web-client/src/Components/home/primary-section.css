@@ -233,27 +233,42 @@
   opacity: 0.9 ease;  
 }
 
-@media(max-width: 798px)
-{
-  .arrow-down 
-  {
-    margin-top: 80px;
-  }
-  .video-showcase
-  {
-    justify-content: flex-end;
-    align-items: flex-start;
-    
-  }
-  .video-showcase .content h2
-  {
-    font-size: 3.0em;
-  }
+/* Estilos generales para PC (pantallas grandes) */
+.video-showcase {
+  margin-top: -4.75rem;
+  position: relative;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: #111;
+  color: #fff;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.video-showcase .content h2 {
+  font-size: 3.5em;
+}
+
+.video-showcase .content h3 {
+  font-size: 2.1em;
+  margin-top: 50px;
+}
+
+.video-showcase .video-button>a {
+  font-size: 1em;
+  padding: 10px 30px;
+  margin-top: 50px;
+}
 
 .arrow-down {
   margin-top: 50px;
   bottom: -70px;
-}
 }
 
 /* Tablet (pantallas entre 768px y 1024px) */
@@ -291,6 +306,20 @@
     padding: 8px 25px;
     margin-top: 40px;
     max-width: 200px;    
+    text-align: center;
+  }
+
+  .video-button
+  {
+    display: flex;
+    margin-top: 100px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .video-button a
+  {
+    max-width: 200px;
     text-align: center;
   }
 }
@@ -343,9 +372,11 @@
 
   .video-button a
   {
-    display: flex;
-    width: 50%;
-    min-width: 150px;
-    
+    max-width: 150px;
+  }
+
+  .video-showcase .video-button>a:hover
+  {
+    max-width: 170px;
   }
 }

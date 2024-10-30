@@ -1,15 +1,15 @@
 import './contact.css';
-import { FaUser, FaWhatsapp } from 'react-icons/fa';
-import './contact.css';
-import React, { useState  } from "react";
+import React, { useState } from "react";
+import ApiForm from "./home/ApiForm";
 import { Element } from 'react-scroll';
+import { FaUser, FaWhatsapp } from 'react-icons/fa';
 
 
 const ContactComponent: React.FC = () => {
-  const [successMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  return ( 
-    <Element name="contact-section" className="contact-section" > 
+  return (
+    <Element name="contact-section" className="contact-section">
       <img src="/images/guys.jpg" alt="Fondo" className="background-image" />
       <div className="contact-overlay"></div>
       <div className="title-container">
@@ -30,23 +30,16 @@ const ContactComponent: React.FC = () => {
             <ul className="icon-list">
               <li> <FaUser />contact@stwarstudios.com</li>
               <li> <FaWhatsapp  />(+57) 316 9352239</li>
-            </ul>
-          </div>
-        <div className="form-section">
-          {successMessage && (
-            <div className="success-message">
-              {successMessage}
+                  </ul>
             </div>
-          )}
-           <form className="contact-form">
-            <input type="text" placeholder="Your name" className="contact-input" />
-            <input type="email" placeholder="Your email" className="contact-input" />
-            <input type="number" placeholder="Your phone number" className="contact-input" />
-            <input type="text" placeholder="Topic" className="contact-input" />
-            <textarea placeholder="Your message" className="contact-textarea"></textarea>
-            <button type="submit" className="contact-send-form">Enviar</button>
-          </form>
-        </div>
+            <div className="form-section">
+                {successMessage && (
+                    <div className="success-message">
+                        {successMessage}
+                    </div>
+                )}
+                <ApiForm onSuccess={setSuccessMessage} />
+            </div>
       </section>
     </Element>
   );
