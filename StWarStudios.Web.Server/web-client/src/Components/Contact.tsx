@@ -30,29 +30,16 @@ const ContactComponent: React.FC = () => {
             <ul className="icon-list">
               <li> <FaUser />contact@stwarstudios.com</li>
               <li> <FaWhatsapp  />(+57) 316 9352239</li>
-            </ul>
-          </div>
-        <div className="form-section">
-          {successMessage && (
-            <div className="success-message">
-              {successMessage}
+                  </ul>
             </div>
-          )}
-          <ApiForm onSuccess={setSuccessMessage} />
-        </div>
-      </section>
-
-      <section className="contact-content">
-        <div className="text-section">
-        </div>
-        <div className="form-section">
-          {successMessage && (
-            <div className="success-message">
-              {successMessage}
+            <div className="form-section">
+                {successMessage && (
+                    <div className="success-message">
+                        {successMessage}
+                    </div>
+                )}
+                <ApiForm onSuccess={setSuccessMessage} />
             </div>
-          )}
-          <ApiForm onSuccess={setSuccessMessage} />
-        </div>
       </section>
     </Element>
   );
