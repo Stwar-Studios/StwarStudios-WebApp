@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           
         </Row>
         <div className='version-info'>
-          <small className='ms-4'>Version: {version || 'Loading...'}</small>
+          <span className='ms-4'>{version || 'Loading...'}</span>
         </div>
       </Container>
     </footer>

@@ -15,7 +15,7 @@ on:
           required: true
         build:
           description: build bumber
-          default: "12  "
+          default: "12"
           required: true
   pull_request:
     branches: [ master ]
@@ -41,7 +41,11 @@ jobs:
 
       - name: Create Version File
         run: |
+          cd ./StWarStudios.Web.Server/web-client
           mkdir -p ./public
+          if [ -f ./public/version.txt ]; then 
+            rm ./public/version.txt 
+          fi
           echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt
           echo "Build: ${{ github.run_number }}" >> ./public/version.txt
 
