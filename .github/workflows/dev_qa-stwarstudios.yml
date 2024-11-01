@@ -38,7 +38,7 @@ jobs:
         run: |
           cd ./StWarStudios.Web.Server/web-client
           npm install  # install dependencies
-          npm run build  # Compile project      
+          npm run build-qa  # Compile project On QA     
 
       - name: Create Version File
         run: |

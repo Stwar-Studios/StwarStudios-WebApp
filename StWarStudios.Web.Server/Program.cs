@@ -40,6 +40,7 @@ namespace StWarStudios.Web.Server
                 options.AddPolicy("AllowReactApp-Dev", policy =>
                 {
                     policy.WithOrigins(reactAppOrigin)
+                        .WithOrigins("https://qa-stwarstudios.azurewebsites.net")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
