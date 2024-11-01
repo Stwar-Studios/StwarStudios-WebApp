@@ -180,7 +180,7 @@ const ContactComponent: React.FC = () => {
                 className="contact-input"
                 value={formData.email}
                 onChange={handleChange}
-                maxLength={100}
+                maxLength={50}
               />
               {errors.email && (
                 <div className="error-message">
@@ -213,7 +213,7 @@ const ContactComponent: React.FC = () => {
                 className="contact-input"
                 value={formData.topic}
                 onChange={handleChange}
-                maxLength={100} 
+                maxLength={50} 
               />
               {errors.topic && (
                 <div className="error-message">
@@ -228,10 +228,10 @@ const ContactComponent: React.FC = () => {
                 className="contact-textarea"
                 value={formData.message}
                 onChange={handleChange}
-                maxLength={1000}
+                maxLength={500}
               ></textarea>
               <div className="character-count">
-                {0 + formData.message.length} 
+                {0 + formData.message.length}/500 
               </div>
               
               {errors.message && (
