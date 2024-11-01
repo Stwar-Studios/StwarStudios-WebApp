@@ -5,12 +5,13 @@ import { FaUser, FaWhatsapp } from 'react-icons/fa';
 
 const ContactComponent: React.FC = () => {
   const [formData, setFormData] = useState({ 
-    ip: '',
+
     name: '',
     email: '',
     phone: '',
     topic: '',
     message: '',
+    userPublicIP: ''
   });
 
   const [errors, setErrors] = useState({
@@ -47,7 +48,7 @@ const ContactComponent: React.FC = () => {
     try {
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const ipData = await ipResponse.json();
-      formData.ip = ipData.ip; 
+      formData.userPublicIP = ipData.ip; 
     } catch (error) {
       console.error('Error al obtener la IP:', error);
       setErrors(prevErrors => ({
@@ -109,10 +110,9 @@ const ContactComponent: React.FC = () => {
       if (!response.ok) throw new Error(data.message || "Error al enviar el mensaje");      
       console.log('Message sent successfully:', data.message);
 
-      setFormData({ ip: '', name: '', email: '', phone: '', topic: '', message: '' }); 
+      setFormData({ userPublicIP: '', name: '', email: '', phone: '', topic: '', message: '' }); 
       setErrors({ name: '', email: '', phone: '', topic: '', message: '', api: '' });
       setSuccessMessage("¡Enviado con éxito! Nos pondremos en contacto pronto.");
-      setTimeout(() => setSuccessMessage(''), 5000); 
 
     } catch (error) {
       console.error('Error:', error);
