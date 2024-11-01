@@ -70,10 +70,9 @@ jobs:
           ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server      
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
-          include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -93,7 +92,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-      permissions:
+    permissions:
       id-token: write #This is required for requesting the JWT
 
     steps:
