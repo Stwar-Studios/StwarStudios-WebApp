@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Element } from 'react-scroll';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
+import { v4 as uuidv4 } from 'uuid'; 
 
 const ContactComponent: React.FC = () => {
   const [formData, setFormData] = useState({
+    id: '', 
     name: '',
     email: '',
     phone: '',
@@ -19,11 +21,12 @@ const ContactComponent: React.FC = () => {
     phone: '',
     topic: '',
     message: '',
-    api: '' 
+    api: ''
   });
 
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,6 +44,7 @@ const ContactComponent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setIsSubmitDisabled(true);
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{7,15}$/;
@@ -71,8 +75,12 @@ const ContactComponent: React.FC = () => {
     if (Object.values(newErrors).some(error => error)) {
       setErrors(newErrors);
       setIsLoading(false);
+      setIsSubmitDisabled(false); 
       return;
     }
+
+    const requestId = uuidv4(); 
+    const newFormData = { ...formData, id: requestId }; 
 
     const apiUrl = `${process.env.REACT_APP_API_URL}v1/api/contact`;
 
@@ -82,7 +90,7 @@ const ContactComponent: React.FC = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(newFormData)
       });
 
       if (!response.ok) throw new Error('Error al enviar el formulario');
@@ -90,10 +98,15 @@ const ContactComponent: React.FC = () => {
       const data = await response.json();
       console.log('Message sent successfully:', data.message);
 
-      setFormData({ name: '', email: '', phone: '', topic: '', message: '' });
+      setFormData({ id: '', name: '', email: '', phone: '', topic: '', message: '' });
       setErrors({ name: '', email: '', phone: '', topic: '', message: '', api: '' });
       setSuccessMessage("¡Enviado con éxito! Nos pondremos en contacto pronto.");
       setTimeout(() => setSuccessMessage(''), 5000); 
+
+      setTimeout(() => {
+        setIsSubmitDisabled(false);
+      }, 300000); 
+
     } catch (error) {
       console.error('Error:', error);
       setErrors(prevErrors => ({
@@ -144,6 +157,7 @@ const ContactComponent: React.FC = () => {
                 className="contact-input"
                 value={formData.name}
                 onChange={handleChange}
+                maxLength={50}
               />
               {errors.name && (
                 <div className="error-message">
@@ -159,6 +173,7 @@ const ContactComponent: React.FC = () => {
                 className="contact-input"
                 value={formData.email}
                 onChange={handleChange}
+                maxLength={100}
               />
               {errors.email && (
                 <div className="error-message">
@@ -175,6 +190,7 @@ const ContactComponent: React.FC = () => {
                 pattern="[0-9]*"
                 value={formData.phone}
                 onChange={handleChange}
+                maxLength={15}
               />
               {errors.phone && (
                 <div className="error-message">
@@ -190,6 +206,7 @@ const ContactComponent: React.FC = () => {
                 className="contact-input"
                 value={formData.topic}
                 onChange={handleChange}
+                maxLength={100} 
               />
               {errors.topic && (
                 <div className="error-message">
@@ -204,7 +221,12 @@ const ContactComponent: React.FC = () => {
                 className="contact-textarea"
                 value={formData.message}
                 onChange={handleChange}
+                maxLength={1000}
               ></textarea>
+              <div className="character-count">
+                {1000 - formData.message.length} 
+              </div>
+              
               {errors.message && (
                 <div className="error-message">
                   <i className="fas fa-exclamation-circle"></i>
@@ -219,7 +241,11 @@ const ContactComponent: React.FC = () => {
                 </div>
               )}
 
-              <button type="submit" className="contact-send-form">
+              <button 
+                type="submit" 
+                className="contact-send-form" 
+                disabled={isSubmitDisabled} 
+              >
                 Enviar
               </button>
             </form>
@@ -236,5 +262,3 @@ const ContactComponent: React.FC = () => {
 };
 
 export default ContactComponent;
-
-
