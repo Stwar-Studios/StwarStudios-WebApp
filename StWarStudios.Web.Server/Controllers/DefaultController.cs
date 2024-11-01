@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace StWarStudios.Web.Server.Controllers
 {
-    [Route("v1/api/[controller]")]
+    [Route("v1/api")]
     [ApiController]
     public class DefaultController : ControllerBase
     {
