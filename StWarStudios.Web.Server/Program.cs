@@ -71,15 +71,8 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseCors("AllowReactApp-Dev");
-            }
-            else
-            {
-                app.UseCors("AllowReactApp-Prod");
-            }
-                
+            app.UseCors("AllowReactApp-Dev");
+            app.UseCors("AllowReactApp-Prod");
             app.MapControllers();
 
             app.MapFallbackToFile("/index.html");
