@@ -45,8 +45,11 @@ jobs:
           mkdir -p ./public
           if [ -f ./public/version.txt ]; then 
             rm ./public/version.txt 
-          fi
-          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt
+          else 
+            echo "Creating version.txt file" 
+            touch ./public/version.txt 
+          fi 
+          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt 
           echo "Build: ${{ github.run_number }}" >> ./public/version.txt
 
       - name: Set version
@@ -69,12 +72,10 @@ jobs:
           echo "Listing contents of StWarStudios.Web.Server:"
           ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server      
 
-
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
-          include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -83,7 +84,7 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
