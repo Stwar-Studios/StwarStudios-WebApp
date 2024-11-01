@@ -34,6 +34,7 @@ namespace StWarStudios.Web.Server
             builder.Logging.AddConsole();
 
             string reactAppOrigin = "https://localhost:5173";
+            string reactAppOriginQA = "https://qa-stwarstudios.azurewebsites.net/";
             string reactAppOriginProd = "https://stwarstudios.com:5000";
 
             builder.Services.AddCors(options =>
@@ -41,8 +42,11 @@ namespace StWarStudios.Web.Server
                 options.AddPolicy("AllowReactApp-Dev", policy =>
                 {
                     policy.WithOrigins(reactAppOrigin)
-                        .WithOrigins("https://qa-stwarstudios.azurewebsites.net")
                           .AllowAnyHeader()
+                          .AllowAnyMethod();
+
+                    policy.WithOrigins(reactAppOriginQA)
+                         .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
 
@@ -76,7 +80,7 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            if (envRelease != "QA")
+            if (envRelease == "QA")
             {
                 app.UseCors("AllowReactApp-Dev");
             }
