@@ -4,13 +4,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace StWarStudios.Web.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("v1/api/[controller]")]
     [ApiController]
     public class DefaultController : ControllerBase
     {
         public DefaultController(IConfiguration configuration)
         {
-            this.ApiVersion = configuration.GetValue<string>("EnvRelease");
+            this.ApiVersion = configuration.GetValue<string>("ApiVersion");
             this.EnvRelease = configuration.GetValue<string>("EnvRelease");
         }
 
