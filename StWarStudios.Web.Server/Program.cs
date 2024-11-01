@@ -62,7 +62,8 @@ namespace StWarStudios.Web.Server
                 var context = services.GetRequiredService<AppDbContext>();
                 context.Database.Migrate();
             }
-            
+            app.UseMiddleware<CorsLoggingMiddleware>();
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
