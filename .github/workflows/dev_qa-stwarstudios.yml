@@ -54,9 +54,12 @@ jobs:
           mkdir -p ./public
           if [ -f ./public/version.txt ]; then 
             rm ./public/version.txt 
-          fi          
-          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt
-          echo "Build: ${{ github.run_number }}" >> ./public/version.txt      
+          else 
+            echo "Creating version.txt file" 
+            touch ./public/version.txt 
+          fi 
+          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt 
+          echo "Build: ${{ github.run_number }}" >> ./public/version.txt
 
       - name: Copy React build to .NET wwwroot
         run: |
