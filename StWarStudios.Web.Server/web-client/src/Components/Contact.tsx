@@ -1,18 +1,16 @@
 import './contact.css';
 import React, { useState } from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Element } from 'react-scroll';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
-import { v4 as uuidv4 } from 'uuid'; 
 
 const ContactComponent: React.FC = () => {
-  const [formData, setFormData] = useState({
-    id: '', 
+  const [formData, setFormData] = useState({ 
+    ip: '',
     name: '',
     email: '',
     phone: '',
     topic: '',
-    message: ''
+    message: '',
   });
 
   const [errors, setErrors] = useState({
@@ -45,6 +43,21 @@ const ContactComponent: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
     setIsSubmitDisabled(true);
+
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      formData.ip = ipData.ip; 
+    } catch (error) {
+      console.error('Error al obtener la IP:', error);
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        api: "No se pudo obtener la dirección IP."
+      }));
+      setIsLoading(false);
+      setIsSubmitDisabled(false);
+      return;
+    }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[0-9]{7,15}$/;
@@ -79,8 +92,7 @@ const ContactComponent: React.FC = () => {
       return;
     }
 
-    const requestId = uuidv4(); 
-    const newFormData = { ...formData, id: requestId }; 
+    const newFormData = { ...formData }; 
 
     const apiUrl = `${process.env.REACT_APP_API_URL}v1/api/contact`;
 
@@ -93,19 +105,14 @@ const ContactComponent: React.FC = () => {
         body: JSON.stringify(newFormData)
       });
 
-      if (!response.ok) throw new Error('Error al enviar el formulario');
-
       const data = await response.json();
+      if (!response.ok) throw new Error(data.message || "Error al enviar el mensaje");      
       console.log('Message sent successfully:', data.message);
 
-      setFormData({ id: '', name: '', email: '', phone: '', topic: '', message: '' });
+      setFormData({ ip: '', name: '', email: '', phone: '', topic: '', message: '' }); 
       setErrors({ name: '', email: '', phone: '', topic: '', message: '', api: '' });
       setSuccessMessage("¡Enviado con éxito! Nos pondremos en contacto pronto.");
       setTimeout(() => setSuccessMessage(''), 5000); 
-
-      setTimeout(() => {
-        setIsSubmitDisabled(false);
-      }, 300000); 
 
     } catch (error) {
       console.error('Error:', error);
@@ -224,7 +231,7 @@ const ContactComponent: React.FC = () => {
                 maxLength={1000}
               ></textarea>
               <div className="character-count">
-                {1000 - formData.message.length} 
+                {0 + formData.message.length} 
               </div>
               
               {errors.message && (
@@ -262,3 +269,4 @@ const ContactComponent: React.FC = () => {
 };
 
 export default ContactComponent;
+
