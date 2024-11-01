@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - QA-StwarStudios
+name: QA Build and deploy StwarStudios
 
 on:
   push:
@@ -28,7 +28,6 @@ jobs:
       version: ${{ steps.set_version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
@@ -38,7 +37,7 @@ jobs:
         run: |
           cd ./StWarStudios.Web.Server/web-client
           npm install  # install dependencies
-          npm run build-qa  # Compile project On QA     
+          npm run build-qa  # Compile project on QA     
 
       - name: Create Version File
         run: |
@@ -64,8 +63,8 @@ jobs:
       - name: Verify directory structure
         run: |
           echo "Listing contents of StWarStudios.Web.Server:"
-          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server 
-          
+          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server      
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
@@ -105,3 +104,6 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AEAF0C6A2FED4E30844175703E8225D7 }}
           package: .
+
+      - name: List published files
+        run: ls -R ${{env.DOTNET_ROOT}}
