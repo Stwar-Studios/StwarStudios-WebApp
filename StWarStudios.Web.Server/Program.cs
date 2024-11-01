@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using StWarStudios.Data;
 using StWarStudios.Web.Server.Mapper;
 using StWarStudios.Web.Server.Middleware;
@@ -22,6 +23,7 @@ namespace StWarStudios.Web.Server
             builder.Services.AddAutoMapper(typeof(MapperProfile));
 
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            string? envRelease = builder.Configuration.GetValue<string>("EnvRelease");
 
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
