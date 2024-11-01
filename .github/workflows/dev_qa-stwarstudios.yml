@@ -1,75 +1,25 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: QA Build and deploy StwarStudios
+name: Build and deploy ASP.Net Core app to Azure Web App - QA-StwarStudios
 
 on:
   push:
     branches:
       - dev
   workflow_dispatch:
-    inputs:
-        version:
-          description: publish Version
-          default: "0.1.1"
-          required: true
-        build:
-          description: build bumber
-          default: "12  "
-          required: true
-  pull_request:
-    branches: [ dev ]
-    types: [opened, synchronize, reopened]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.set_version.outputs.version }}
+
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-          
-      - name: Build React project
-        run: |
-          cd ./StWarStudios.Web.Server/web-client
-          npm install  # install dependencies
-          npm run build-qa  # Compile project on QA     
-
-      - name: Create Version File
-        run: |
-          mkdir -p ./public
-          echo "Version: ${{ steps.set_version.outputs.version }}" > ./public/version.txt
-          echo "Build: ${{ github.run_number }}" >> ./public/version.txt
-
-      - name: Set version
-        id: set_version
-        run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            echo "version=${{ github.run_number }}" >> $GITHUB_OUTPUT
-          else
-            echo "version=PR-${{ github.event.pull_request.number }}" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Copy React build to .NET wwwroot
-        run: |
-          mkdir -p ./StWarStudios.Web.Server/wwwroot  # Crear el directorio wwwroot si no existe
-          rm -rf ./StWarStudios.Web.Server/wwwroot/*  # Limpiar archivos existentes en wwwroot
-          cp -R ./StWarStudios.Web.Server/web-client/build/* ./StWarStudios.Web.Server/wwwroot/  # Copiar el build de React a wwwroot
-
-      - name: Verify directory structure
-        run: |
-          echo "Listing contents of StWarStudios.Web.Server:"
-          ls -R ./StWarStudios.Web.Server/wwwroot  # Listar todos los archivos y carpetas en StWarStudios.Web.Server      
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.x'
-          include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -78,7 +28,7 @@ jobs:
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
@@ -89,21 +39,27 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    permissions:
+      id-token: write #This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: .net-app
+      
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7174B79DD157400B822E1881F5E1736C }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0F1CD726309940A9870639D0325D8B61 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E27C08C11BA743428569A0C0D7E3C082 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'QA-StwarStudios'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AEAF0C6A2FED4E30844175703E8225D7 }}
           package: .
-
-      - name: List published files
-        run: ls -R ${{env.DOTNET_ROOT}}
+          
