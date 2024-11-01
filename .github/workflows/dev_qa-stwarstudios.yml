@@ -15,8 +15,14 @@ on:
           required: true
         build:
           description: build bumber
-          default: "12  "
           required: true
+        environment:
+          description: Environment
+          required: true        
+          type: choice
+          options:                
+          - StWar - QA
+          - StWar - PROD
   pull_request:
     branches: [ dev ]
     types: [opened, synchronize, reopened]
