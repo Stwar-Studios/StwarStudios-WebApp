@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using StWarStudios.Data;
 using System;
 
@@ -19,6 +20,7 @@ namespace StWarStudios.Web.Server
             builder.Services.AddSwaggerGen();
 
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            string? envRelease = builder.Configuration.GetValue<string>("EnvRelease");
 
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
@@ -62,7 +64,7 @@ namespace StWarStudios.Web.Server
             app.UseStaticFiles();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            if (envRelease != "PROD")
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
@@ -71,8 +73,15 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            app.UseCors("AllowReactApp-Dev");
-            app.UseCors("AllowReactApp-Prod");
+            if (envRelease != "QA")
+            {
+                app.UseCors("AllowReactApp-Dev");
+            }
+            else
+            {
+                app.UseCors("AllowReactApp-Prod");
+            }
+                
             app.MapControllers();
 
             app.MapFallbackToFile("/index.html");
