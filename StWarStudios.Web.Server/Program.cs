@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using StWarStudios.Data;
+using StWarStudios.Web.Server.Middleware;
 using System;
 
 namespace StWarStudios.Web.Server
@@ -40,6 +41,7 @@ namespace StWarStudios.Web.Server
                 options.AddPolicy("AllowReactApp-Dev", policy =>
                 {
                     policy.WithOrigins(reactAppOrigin)
+                        .WithOrigins("https://qa-stwarstudios.azurewebsites.net")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
@@ -59,7 +61,8 @@ namespace StWarStudios.Web.Server
                 var context = services.GetRequiredService<AppDbContext>();
                 context.Database.Migrate();
             }
-            
+            app.UseMiddleware<CorsLoggingMiddleware>();
+            app.UseMiddleware<ExceptionHandlingMiddleware>();
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
