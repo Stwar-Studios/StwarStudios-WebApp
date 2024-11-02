@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using StWarStudios.Data;
+using StWarStudios.Web.Server.Mapper;
+using StWarStudios.Web.Server.Middleware;
 using System;
 
 namespace StWarStudios.Web.Server
@@ -17,6 +19,7 @@ namespace StWarStudios.Web.Server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddAutoMapper(typeof(MapperProfile));
 
             string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
