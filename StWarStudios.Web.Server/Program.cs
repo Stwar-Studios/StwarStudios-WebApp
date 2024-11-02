@@ -35,7 +35,8 @@ namespace StWarStudios.Web.Server
             builder.Logging.SetMinimumLevel(LogLevel.Trace);
 
             string reactAppOrigin = "https://localhost:5173";
-            string reactAppOriginProd = "https://stwarstudios.com";
+            string reactAppOriginQA = "https://qa-stwarstudios.azurewebsites.net";
+            string reactAppOriginProd = "https://stwarstudios.com:5000";
 
             builder.Services.AddCors(options =>
             {
@@ -66,7 +67,7 @@ namespace StWarStudios.Web.Server
             app.UseStaticFiles();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            if (envRelease == "QA")
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
@@ -75,7 +76,7 @@ namespace StWarStudios.Web.Server
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            if (app.Environment.IsDevelopment())
+            if (envRelease == "QA")
             {
                 app.UseCors("AllowReactApp-Dev");
             }
