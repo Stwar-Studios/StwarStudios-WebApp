@@ -43,7 +43,7 @@ namespace StWarStudios.Web.Server
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowReactApp-Dev", policy =>
+                options.AddPolicy("AllowReactApp", policy =>
                 {
                     policy.WithOrigins(reactAppOrigin)
                           .AllowAnyHeader()
