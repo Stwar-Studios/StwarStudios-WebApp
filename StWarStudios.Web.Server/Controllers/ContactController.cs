@@ -41,9 +41,33 @@ namespace StWarStudios.Web.Server.Controllers
             Contact entity = null;
             try
             {
+                var currentDateUTC = DateTime.UtcNow.AddMinutes(-1);
+                var ips = _dbContext.UserRequests
+                    .Where( ur => ur.UserIp == value.UserPublicIP && ur.CreationDate > currentDateUTC)
+                    .ToList();
+                
+                if(ips.Any())
+                {
+                    foreach(var ip in ips)
+                    {
+                        ip.Count += 1;
+                    }
+                    _dbContext.UpdateRange(ips);
+                    await _dbContext.SaveChangesAsync();
+                    return Ok(ApiResponseUtility.Error("We have received your request previously. please wait and retry later"));
+                }
+
                 entity = _mapper.Map<Contact>(value);
                 entity.Id = Guid.NewGuid();
                 _dbContext.Contacts.Add(entity);
+
+                await _dbContext.UserRequests.AddAsync(new UserRequest
+                {
+                    Count = 1,
+                    ObjectId = entity.Id,
+                    UserIp = value.UserPublicIP,
+                });
+
                 result = await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
