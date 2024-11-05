@@ -41,7 +41,7 @@ namespace StWarStudios.Web.Server.Controllers
             Contact entity = null;
             try
             {
-                var currentDateUTC = DateTime.UtcNow.AddMinutes(-1);
+                var currentDateUTC = DateTime.UtcNow.AddMinutes(-2);
                 var ips = _dbContext.UserRequests
                     .Where( ur => ur.UserIp == value.UserPublicIP && ur.CreationDate > currentDateUTC)
                     .ToList();
