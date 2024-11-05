@@ -15,14 +15,17 @@ namespace StWarStudios.Data.Entities
         public DateTime? ModifyDate { get; set; }
         public DateTime? DeleteDate { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(50)]
         public string Name { get; set; } = string.Empty;
+
         [EmailAddress(ErrorMessage = "Invalid email format")]
-        [MaxLength(100)]
+        [MaxLength(50)]
         public string Email { get; set; } = string.Empty;
+
         [MaxLength(50)]
         public string Phone { get; set; } = string.Empty;
-        [MaxLength(500)]
+
+        [MaxLength(1000)]
         public string Topic { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
     }

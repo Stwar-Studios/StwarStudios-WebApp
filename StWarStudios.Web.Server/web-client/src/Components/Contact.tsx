@@ -107,21 +107,29 @@ const ContactComponent: React.FC = () => {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.message || "Error al enviar el mensaje");      
-      console.log('Message sent successfully:', data.message);
+      if (!response.ok) throw new Error(data.message || "El mensaje no ha podido ser enviado");      
+      
+      if(data.success)
+      {
+        setSuccessMessage("¡Enviado con éxito! Pronto nos pondremos en contacto contigo.");
+      }
+      else{
+        setSuccessMessage(data.message);
+      }
 
       setFormData({ userPublicIP: '', name: '', email: '', phone: '', topic: '', message: '' }); 
       setErrors({ name: '', email: '', phone: '', topic: '', message: '', api: '' });
-      setSuccessMessage("¡Enviado con éxito! Nos pondremos en contacto pronto.");
+      
 
     } catch (error) {
       console.error('Error:', error);
       setErrors(prevErrors => ({
         ...prevErrors,
-        api: "Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo."
+        api: "Hubo un problema al enviar el formulario. Por favor, inténtalo mas tarde."
       }));
     } finally {
       setIsLoading(false);
+      setIsSubmitDisabled(false);
     }
   };
 
