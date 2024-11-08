@@ -257,9 +257,12 @@ const ContactComponent: React.FC = () => {
               </button>
             </form>
           )}
-          {isLoading && (
+         {isLoading && (
             <div className="overlay">
-              <div className="loading-message">Enviando...</div>
+              <div className="loading-message">
+                <div className="spinner"></div>
+                  Enviando...
+              </div>
             </div>
           )}
         </div>
