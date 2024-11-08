@@ -1,6 +1,6 @@
 .footer {
-  background-color: #1c1c1c;
-  padding: 40px 20px; 
+  background-color: #000000;
+  padding: 40px 20px; /* Ajusté el padding de los lados para hacerlo más proporcionado */
   color: white;
 }
 
@@ -10,34 +10,65 @@
 }
 
 .footer-logo img {
-  width: 100%; 
-  max-width: 150px; 
-  margin-bottom: 30px; 
-}
-.footer-link {
-  background: none; 
-  border: none; 
-  color: #ffffff; 
-  text-decoration: none !important;
-  padding: 0; 
-  font-size: 1rem; 
-  cursor: pointer; 
+  width: 50%;
+  margin-bottom: 10px;
+  max-width: 200px;
 }
 
-.footer-link:hover {
-  text-decoration: underline; /* Agrega subrayado cuando pasa el ratón */
-}
-
-
-.footer-social {
+.footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 15px !important; 
+}
+
+.footer-link:hover {
+  color: #12a8f3 !important;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   color: #6f42c1;
-  flex-direction: column;
-  gap: 10px;
+  gap: 15px; 
   font-size: 30px;
-  margin-right: -70px;
+  margin-top: -20px;
+}
+
+.facebook-icon {
+  color: #1877f2;
+}
+
+.twitter-icon {
+  color: #1da1f2;
+}
+
+.youtube-icon {
+  color: #c21919;
+}
+
+.linkedin-icon {
+  color: #0a66c2;
 }
 
 .footer-text {
@@ -53,66 +84,89 @@
   margin: 10px 0;
 }
 
-.footer .footer-text {
-  font-size: 0.875rem;
-  margin-top: 10px;
-  color: #a8a8a8;
+.footer-text1 {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.line-one {
+  margin: 0;
+  font-size: 30px;
+  color: #ffffff;
+  font-family: 'Lexend';
+}
+
+.line-two {
+  margin: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: 'Lexend';
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; 
+  margin: 0; 
+}
+
+.modal-content {
+  width: 250px; 
+  height: 330px; 
+  border-radius: 10px; 
 }
 
 .modal-header {
-  background-color: #6f42c1;
-  color: white;
+  background-color: #f8f9fa;
+  color: #3b86e2; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600; 
+  color: #3b86e2; 
+  margin: 0;
 }
 
 .modal-title {
   font-size: 1.3rem !important;
-  font-weight: 600;
+  font-weight: bold !important;
   margin: 0;
 }
 
 .modal-body {
   padding: 20px;
   font-size: 0.75rem;
-  color: #242424;
+  color: #252525;
   line-height: 1.6;
   text-align: justify;
   overflow-y: auto;
+  background-color: #ffffff;
 }
 
 .modal-footer {
-  background-color: #f8f9fa;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border: none;
-}
-
-button.close {
-  font-size: 1rem;
-  color: #fff !important;
-  opacity: 0.7;
-  border: none;
-  background: none;
-  font-weight: bold;
-}
-
-button.close:hover {
-  opacity: 1;
-  color: #6f42c1 !important;
+  background-color: #ffffff !important; 
+  padding: 1px !important; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center !important; 
 }
 
 .btn-secondary {
   background-color: #6f42c1 !important;
   border-color: #6f42c1 !important;
   color: white;
-  font-weight: 600;
-  padding: 8px 15px;
-  border-radius: 10px;
+  font-size: 0.875rem !important; 
+  padding: 3px 10px !important; 
+  border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
@@ -124,16 +178,6 @@ button.close:hover {
 
 .modal-backdrop {
   background-color: rgb(0, 0, 0) !important;
-}
-
-.footer-link {
-  text-decoration: none;
-  color: #ffffff !important;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  color: #ffffff !important;
 }
 
 @media (max-width: 1200px) {
