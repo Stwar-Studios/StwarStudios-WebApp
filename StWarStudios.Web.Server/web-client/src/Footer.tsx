@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faFacebookSquare, faTwitterSquare, faInstagramSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './footer.css';
 
 const Footer: React.FC = () => {
+  library.add(faFacebookSquare, faTwitterSquare, faInstagramSquare, faLinkedin);
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
@@ -15,13 +18,18 @@ const Footer: React.FC = () => {
 
   return (
     <>
-     <footer className="footer">
+   <footer className="footer">
   <Container>
-    <Row className="align-items-center">
-      <Col md={6} className="text-center text-md-left footer-text">
-        © {new Date().getFullYear()} StWar Studios - Todos los derechos reservados.
+    <Row className="align-items-start justify-content-between">
+      <Col md={3} className="footer-logo">
+        <img
+          src="images/logo.png"
+          alt="StWar Studios Logo"
+          className="logo-image"
+        />
       </Col>
-      <Col md={6} className="text-center text-md-right">
+
+      <Col md={5} className="footer-links text-center">
         <Button
           variant="link"
           onClick={handleOpenPrivacyModal}
@@ -29,7 +37,6 @@ const Footer: React.FC = () => {
         >
           Política de Privacidad
         </Button>
-        {' | '}
         <Button
           variant="link"
           onClick={handleOpenTermsModal}
@@ -37,19 +44,27 @@ const Footer: React.FC = () => {
         >
           Términos y Condiciones
         </Button>
-        <span className="footer-icons">
-          <FaFacebookF />
-        </span>
-        <span className="footer-icons">
-          <FaTwitter />
-        </span>
-        <span className="footer-icons">
-          <FaInstagram />
-        </span>
+      </Col>
+      <Col md={3} className="footer-social text-center">
+          <Col md={3} className="footer-social">
+              <FontAwesomeIcon icon={faFacebookSquare} />
+              <FontAwesomeIcon icon={faTwitterSquare} />  
+              <FontAwesomeIcon icon={faInstagramSquare} /> 
+              <FontAwesomeIcon icon={faLinkedin} /> 
+          </Col>
+      </Col>
+    </Row>
+    <Row className="text-center">
+      <Col>
+        <hr />
+        <div className="footer-text">
+          © {new Date().getFullYear()} StWar Studios - Todos los derechos reservados.
+        </div>
       </Col>
     </Row>
   </Container>
 </footer>
+
 
       <Modal show={showTermsModal} onHide={handleCloseTermsModal}>
         <Modal.Header>
