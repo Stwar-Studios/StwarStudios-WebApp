@@ -8,14 +8,15 @@ namespace StWarStudios.Data
     {
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<UserRequest> UserRequests { get; set; }
+        public DbSet<Error> Errors { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    string? connectionString = _configuration.GetConnectionString("DefaultConnection");
-            
+
         //    optionsBuilder.UseSqlServer(connectionString);
         //}
-        
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -29,6 +30,8 @@ namespace StWarStudios.Data
             modelBuilder.Entity<UserRequest>().Property(b => b.CreationDate).HasDefaultValueSql("GETUTCDATE()");
             modelBuilder.Entity<UserRequest>().Property(b => b.Count).HasDefaultValueSql("1");
             modelBuilder.Entity<UserRequest>().Property(b => b.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Error>().Property(b => b.Id).HasDefaultValueSql("NEWID()");
+            modelBuilder.Entity<Error>().Property(b => b.CreationDate).HasDefaultValueSql("GETUTCDATE()");
             base.OnModelCreating(modelBuilder);
         }
 
