@@ -77,6 +77,7 @@ namespace StWarStudios.Web.Server.Controllers
 
                 entity = _mapper.Map<Contact>(value);
                 entity.Id = Guid.NewGuid();
+                entity.CreationDate = DateTime.UtcNow;
 
                 _dbContext.Contacts.Add(entity);
 
