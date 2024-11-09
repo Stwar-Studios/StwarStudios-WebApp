@@ -6,8 +6,6 @@ import 'tippy.js/dist/tippy.css'; // Importa los estilos CSS de tippy.js
 import { SiMicrosoftazure, SiDotnet, SiBlazor, SiAngular, SiReact } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
 
-const iconSize = 76; // Variable para el tamaño del icono
-
 function TechStackSection() {
   return (
     <>
