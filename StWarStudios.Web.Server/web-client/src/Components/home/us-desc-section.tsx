@@ -12,9 +12,25 @@ function UsDescSection()
                 <img src="/images/line purple.png" className='us-img' alt="LinePurple" />
               </div>
               <div className='us-content'>
-                Labore proident nisi fugiat nostrud sint mollit aliqua ipsum ad veniam cupidatat 
-                ullamco ullamco et. Aliqua tempor do consectetur reprehenderit Lorem aliqua commodo 
-                occaecat deserunt. Do eiusmod incididunt
+              <p>
+                En StWar Studios, nos dedicamos al desarrollo de sistemas informáticos conforme a tus necesidades, incluyendo páginas web, integraciones, automatizaciones
+                 y dem&aacute;s, aprovechando las nuevas tecnologías para brindarte soluciones innovadoras. 
+               </p>
+               <p>
+                Nuestro compromiso con un alto valor humano significa que ponemos en primer lugar tanto a ti como a nuestros colaboradores, 
+                promoviendo el crecimiento y desarrollo profesional de cada miembro de nuestro equipo. 
+               </p>
+                <p>
+                  Con una clara visión de futuro, buscamos expandirnos en Latinoamérica y convertirnos en un referente en el sector tecnológico.  
+                  Nos distinguimos por nuestra responsabilidad, integridad y compromiso con la calidad, asegurando así tu satisfacción y confianza en todos 
+                  nuestros servicios. 
+                </p> 
+                <p> <strong>¡Estamos aquí para acompañarte y crecer juntos!</strong>
+                  
+                </p> 
+                 
+             
+
               </div>
              
           </div>

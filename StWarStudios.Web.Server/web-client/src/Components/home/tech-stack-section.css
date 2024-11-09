@@ -22,6 +22,12 @@
     -webkit-text-fill-color: transparent; /* Color de texto transparente para navegadores webkit */
     -moz-text-fill-color: transparent; /* Color de texto transparente para navegadores Mozilla */
     cursor: pointer;
+    font-size: 4em;
+  }
+
+  .tech-stack .tech-tooltip
+  {    
+    color: white !important;
   }
   
   .tech-stack .combined-icon {
@@ -65,3 +71,25 @@
     color: #c2226c;
   }
   
+
+  
+@media (max-width: 1240px) {
+  .tech-stack .icon
+  {
+    font-size: 3em; 
+  } 
+}  
+@media (max-width: 970px) {
+}
+@media (max-width: 860px) {
+}
+@media (max-width: 760px) {
+}
+
+
+@media (max-width: 470px) {
+  .tech-stack .icon
+  {
+    font-size: 2em; 
+  }  
+}
