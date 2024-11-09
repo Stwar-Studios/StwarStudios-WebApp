@@ -2,11 +2,10 @@ import './contact.css';
 import React, { useState } from "react";
 import { Element } from 'react-scroll';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
-import { Modal, Spinner, Button, Form } from 'react-bootstrap';
+import { Modal, Spinner } from 'react-bootstrap';
 
 const ContactComponent: React.FC = () => {
 
-  const [showOverlay, setShowOverlay] = useState(false);
   const [formData, setFormData] = useState({ 
 
     name: '',
