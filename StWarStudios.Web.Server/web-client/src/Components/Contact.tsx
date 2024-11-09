@@ -2,8 +2,10 @@ import './contact.css';
 import React, { useState } from "react";
 import { Element } from 'react-scroll';
 import { FaUser, FaWhatsapp } from 'react-icons/fa';
+import { Modal, Spinner } from 'react-bootstrap';
 
 const ContactComponent: React.FC = () => {
+
   const [formData, setFormData] = useState({ 
 
     name: '',
@@ -265,10 +267,15 @@ const ContactComponent: React.FC = () => {
               </button>
             </form>
           )}
-          {isLoading && (
-            <div className="overlay">
-              <div className="loading-message">Enviando...</div>
-            </div>
+         {isLoading && (
+            <Modal show={isLoading} backdrop="static" keyboard={false} centered className='contact-overlay'> 
+            <Modal.Body className="d-flex justify-content-center align-items-center" style={{ height: '100vh', background: 'transparent' }}> 
+            <Spinner animation="border" role="status" variant='light'> 
+                  <span className="sr-only">Cargando...</span> 
+                </Spinner> 
+              <span className='ms-2 loading-message'>Enviando...</span> 
+              </Modal.Body> 
+              </Modal>
           )}
         </div>
       </section>

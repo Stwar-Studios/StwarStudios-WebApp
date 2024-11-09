@@ -1,20 +1,267 @@
 .footer {
-  position: relative;
-  background-color: #000;
+  background-color: #000000;
+  padding: 40px 20px; /* Ajusté el padding de los lados para hacerlo más proporcionado */
   color: white;
-  text-align: center;
-  padding: 20px 0;
-  width: 100%;
-  z-index: 10 !important;
-  margin-top: auto;
 }
-  
-  .footer-link {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 10px;
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  width: 50%;
+  margin-bottom: 10px;
+  max-width: 200px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 10px; 
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 15px !important; 
+}
+
+.footer-link:hover {
+  color: #12a8f3 !important;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #6f42c1;
+  gap: 15px; 
+  font-size: 30px;
+  margin-top: -20px;
+}
+
+.facebook-icon {
+  color: #1877f2;
+}
+
+.twitter-icon {
+  color: #1da1f2;
+}
+
+.youtube-icon {
+  color: #c21919;
+}
+
+.linkedin-icon {
+  color: #0a66c2;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: #a8a8a8;
+  margin-top: 20px;
+}
+
+.footer .text-center hr {
+  border: none;
+  height: 1px;
+  background-color: #7a7a7a;
+  margin: 10px 0;
+}
+
+.footer-text1 {
+  font-family: 'Lexend';
+  text-align: center;
+  margin-top: 0px;
+  font-weight: 600;
+}
+
+.line-one {
+  margin: 0;
+  font-size: 1.8em;
+  color: #ffffff;
+  font-family: 'Lexend';
+}
+
+.line-two {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
+  font-family: 'Lexend';
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; 
+  margin: 0; 
+}
+
+.modal-content {
+  width: 250px; 
+  height: 330px; 
+  border-radius: 10px; 
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  color: #3b86e2; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600; 
+  color: #3b86e2; 
+  margin: 0;
+}
+
+.modal-title {
+  font-size: 1.3rem !important;
+  font-weight: bold !important;
+  margin: 0;
+}
+
+.modal-body {
+  padding: 20px;
+  font-size: 0.75rem;
+  color: #252525;
+  line-height: 1.6;
+  text-align: justify;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.modal-footer {
+  background-color: #ffffff !important; 
+  padding: 1px !important; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center !important; 
+}
+
+.btn-secondary {
+  background-color: #6f42c1 !important;
+  border-color: #6f42c1 !important;
+  color: white;
+  font-size: 0.875rem !important; 
+  padding: 3px 10px !important; 
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a2d97 !important;
+  border-color: #5a2d97 !important;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+@media (max-width: 1200px) {
+  .modal-content {
+    max-width: 75vh;
   }
-  
-  .footer-link:hover {
-    text-decoration: underline;
+
+  .modal-title {
+    font-size: 1.2rem;
   }
+
+  .modal-body {
+    font-size: 0.85rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .modal-content {
+    max-width: 70vh;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-body {
+    font-size: 0.9rem;
+  }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  .footer-buttons
+  {
+    margin-top: 2em;
+  }
+
+  .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .modal-body {
+    font-size: 0.95rem;
+  }
+
+  .btn-secondary {
+    font-size: 1rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+
+  .modal-title {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    font-size: 1rem;
+  }
+
+  .btn-secondary {
+    font-size: 1.1rem;
+    padding: 6px 10px;
+  }
+}

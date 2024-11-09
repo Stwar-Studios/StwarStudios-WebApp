@@ -395,6 +395,10 @@
 }
 
 @media (max-width: 768px) {
+    .stwar-navbar
+    {
+        flex-direction: column !important;
+    }
     .navbar-brand img{
         width: 2em;
     }
@@ -412,10 +416,6 @@
     {
         transform: translateY(-150%);
         display: none;
-    }
-    .navbar-collapse.show
-    {        
-        display: block;
     }
 }
 
