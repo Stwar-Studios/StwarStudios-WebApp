@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitterSquare, faYoutubeSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -7,6 +7,8 @@ import './footer.css';
 const Footer: React.FC = () => {
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [version, setVersion] = useState(''); 
+  const [build, setBuild] = useState('');
 
   const handleOpenTermsModal = () => setShowTermsModal(true);
   const handleCloseTermsModal = () => setShowTermsModal(false);
@@ -14,6 +16,19 @@ const Footer: React.FC = () => {
   const handleOpenPrivacyModal = () => setShowPrivacyModal(true);
   const handleClosePrivacyModal = () => setShowPrivacyModal(false);
 
+  useEffect(() => { fetch('/version.txt') 
+    .then((response) => response.text()) 
+    .then((text) => 
+    { 
+      const lines = text.split('\n'); 
+      if (lines.length >= 2) 
+      { 
+        setVersion(lines[0]);
+        setBuild(lines[1]); 
+      }
+    }); 
+  }, []);
+  
   return (
     <>
    <footer className="footer">
@@ -27,7 +42,7 @@ const Footer: React.FC = () => {
       />
       <Col className='footer-text1'>
         <p className="line-one">STWAR</p>
-        <p className="line-two">Dev Studios</p>
+        <p className="line-two">Studios</p>
       </Col>
     </Col>
 
@@ -46,22 +61,17 @@ const Footer: React.FC = () => {
           className="footer-link"
         >
           Términos y Condiciones
-        </Button>
-        <Button
-          variant="link"
-          onClick={handleOpenPrivacyModal}
-          className="footer-link"
-        >
-          Versión
-        </Button>
-        <Button
-          variant="link"
-          onClick={handleOpenTermsModal}
-          className="footer-link"
-        >
-          Build
-        </Button>
+        </Button>       
       </div>
+      <hr className='mt-4'/>
+      <Col className='mt-4 text-center'>
+        <p>
+          Versión <strong>{version}</strong>
+        </p>
+        <p className='ms-2'>
+          Build <strong>{build}</strong>
+        </p>
+      </Col>
     </Col>
   </Row>
 <Row className="text-center">
