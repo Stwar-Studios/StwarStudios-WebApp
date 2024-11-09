@@ -39,14 +39,21 @@ namespace StWarStudios.Web.Server.Controllers
         {
             int result = -1;
             Contact entity = null;
+            if(value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
+            var usrRsqt = CreateRequest(null, value?.UserPublicIP ?? "UNKNOWN");
+
             try
             {
                 var currentDateUTC = DateTime.UtcNow.AddMinutes(-2);
                 var ips = _dbContext.UserRequests
                     .Where( ur => ur.UserIp == value.UserPublicIP && ur.CreationDate > currentDateUTC)
-                    .ToList();
-                
-                if(ips.Any())
+                    .ToList();                
+
+                if (ips.Any())
                 {
                     foreach(var ip in ips)
                     {
@@ -54,31 +61,68 @@ namespace StWarStudios.Web.Server.Controllers
                     }
                     _dbContext.UpdateRange(ips);
                     await _dbContext.SaveChangesAsync();
+
+                    await SaveError(new Error
+                    {
+                        Type = "Log",
+                        Action = "Insert Conact",
+                        Message = "User has requested insert contact again. please wait and retry later",
+                        Description = "No more description",
+                        Details = "No details",
+                        UserRequestID = ips.FirstOrDefault()!.Id
+                    });
+
                     return Ok(ApiResponseUtility.Error("We have received your request previously. please wait and retry later"));
                 }
 
                 entity = _mapper.Map<Contact>(value);
                 entity.Id = Guid.NewGuid();
+
                 _dbContext.Contacts.Add(entity);
 
-                await _dbContext.UserRequests.AddAsync(new UserRequest
-                {
-                    Count = 1,
-                    ObjectId = entity.Id,
-                    UserIp = value.UserPublicIP,
-                });
+                usrRsqt.ObjectId = entity.Id;
+                await _dbContext.UserRequests.AddAsync(usrRsqt);
 
                 result = await _dbContext.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                _logger.LogCritical(ex, "Error on inserting contact");                
-            }           
+                _logger.LogCritical(ex, "Error on inserting contact");
+                await SaveError(ExceptionToError(ex, usrRsqt.Id != Guid.Empty ? usrRsqt.Id : null));
+            }
 
             return result > 0 ? 
                 Ok(ApiResponseUtility.Success<Guid> (entity!.Id)) : 
                 BadRequest(ApiResponseUtility.Error("Couldn't create entity: check logs"));
 
+        }
+
+        private UserRequest CreateRequest(Guid? relatedObject, string userPublicIP)
+        {
+            return new UserRequest
+            {
+                Count = 1,
+                ObjectId = relatedObject,
+                UserIp = userPublicIP,
+            };
+        }
+
+        private Error ExceptionToError(Exception ex, Guid? requestId)
+        {
+           return new Error { 
+                Type = "Exception",
+                Action = "Insert Conact", 
+                Message = ex.Message, 
+                Description = ex.InnerException != null ? ex.InnerException.Message : "No more description", 
+                Details = ex.StackTrace ?? "No details",
+                UserRequestID = requestId
+            };            
+        }
+
+        private async Task SaveError(Error error)
+        {
+            await _dbContext.Errors.AddAsync(error);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
