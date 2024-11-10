@@ -66,7 +66,7 @@ function NavBar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);   
+    }, [getCurrentLanguage]);   
 
     return (
         <header className="header">
