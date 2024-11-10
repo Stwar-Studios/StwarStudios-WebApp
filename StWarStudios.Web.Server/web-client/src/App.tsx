@@ -9,14 +9,10 @@ import NavBar from './Components/navbar';
 // import Portafolio from './Components/Portafolio';
 import Footer from './Footer';  
 import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { useTranslations } from './Components/translation-provider';
 
 function App() {
-  const { changeLanguage } = useTranslations();
   return (
     <>
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('es')}>Español</button>
     <NavBar /> 
       <div className='App'>
       <Routes>
