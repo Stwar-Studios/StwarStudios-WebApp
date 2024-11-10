@@ -1,39 +1,37 @@
 import './services-section.css';
 import { Element } from 'react-scroll';
-
-
+import { useTranslations  } from '../translation-provider';
+import { scroller } from 'react-scroll';
 function ServicesSection(){  
+  const scrollToSection = (section : string) => {
+    scroller.scrollTo(section, {
+      duration: 500,
+      delay: 0,
+      smooth: 'easeIn'
+    });
+};
+  const { servicesSection } = useTranslations();
   return <>  
-<Element name="services" className="services-section" >
-        <div className="">
-          <h2 className="mb-5"><strong>Nuestros Servicios</strong></h2>
-          <div className="services-container">
-              <div className="service-card shadow-lg shadow-blue">
-                  <div className="service-card-content">
-                  <img src="/images/keys.png" alt="soluciones" className="service-icon" />
-                  <div className='service-title'>
-                    <h3 className="">Soluciones <br/>Personalizadas</h3>                   
-                    <img src="/images/line blue.png" alt="LineBlue" className='img-underline' />
-                  </div>
-                 
-                        <p className="">Creación de software conforme a tus necesidades, digitalización de tus procesos para transformar tu negocio, incluyendo automatización de tareas manuales, y más.</p>  
-                          <a href='#us-section' className="service-btn btn-blue">Más Información</a> {/* Button Blue */}
-                  </div>
-            </div>
-              <div className="service-card shadow-lg shadow-purple">
-                  <div className="service-card-content  ">                  
-                  <img src="/images/cloud1.png" alt="integracion" className="service-icon" />
-                  <div className='service-title'>
-                    <h3 className="">Integración con <br /> Nuevas Tecnologías</h3>    
-                    <img src="/images/line purple.png" alt="LinePurple" className='img-underline' />
-                  </div>
-                        <p className="">Implementación y adaptación de tecnologías emergentes para modernizar tus sistemas existentes así como migración a la nube para escalamiento y mejora de la eficiencia operativa.</p>
-                          <a href='#us-section' className="service-btn btn-purple">Más Información</a> {/* Button Purple */}
-              </div>
+    <Element name="services" className="services-section">
+      <div>
+        <h2 className="mb-5"><strong>{servicesSection.title}</strong></h2>
+        <div className="services-container">
+          {servicesSection.services.map((service, index) => (
+            <div key={index} className={`service-card shadow-lg shadow-${index === 0 ? 'blue' : 'purple'}`}>
+              <div className="service-card-content">
+                <img src={index === 0 ? "/images/keys.png" : "/images/cloud1.png"} alt={service.title} className="service-icon" />
+                <div className="service-title">
+                  <h3>{service.title}</h3>
+                  <img src={index === 0 ? "/images/line blue.png" : "/images/line purple.png"} alt={`Line${index === 0 ? 'Blue' : 'Purple'}`} className="img-underline" />
+                </div>
+                <p>{service.description}</p>
+                <a href="#us-section" className={`service-btn btn-${index === 0 ? 'blue' : 'purple'}`} onClick={() => scrollToSection('contact-section')}>{service.button}</a>
               </div>
             </div>
+          ))}
         </div>
-      </Element>
- </>;
+      </div>
+    </Element>
+  </>;
 }
 export default ServicesSection;

@@ -1,0 +1,109 @@
+{
+  "videoShowcase": {
+    "homeTitle": "Move Forward to the Technological Future",
+    "homeSubTitle": "Empower your business with the best and most innovative tech solutions",
+    "contactButton": "Contact Us",
+    "servicesArrowTitle": "services",
+    "htmlVideoFallback": "Your browser does not support HTML5 video."
+  },
+  "servicesSection": {
+    "title": "Our Services",
+    "services": [
+      {
+        "title": "Customized Solutions",
+        "description": "Creating software tailored to your needs, digitizing your processes to transform your business, including task automation, and more.",
+        "button": "More Information"
+      },
+      {
+        "title": "Integration with New Technologies",
+        "description": "Implementation and adaptation of emerging technologies to modernize your existing systems, as well as cloud migration for scalability and operational efficiency.",
+        "button": "More Information"
+      }
+    ]
+  },
+  "companyDescSection": {
+    "title": "More than a solution, a partner",
+    "description": "The success of your business is our top priority, which is why we want to be your strategic partner, adapting to your specific needs. We work closely with you to understand your unique challenges and provide the support needed to overcome them. Together, we achieve your goals by empowering your growth and optimizing your processes."
+  },
+  "techStackSection": {
+    "title": "Our Tech Stack",
+    "technologies": {
+      "blazor": "Blazor",
+      "azure": "Microsoft Azure",
+      "dotnet": ".NET",
+      "react": "React",
+      "angular": "Angular",
+      "sql": "MS SQL / Azure SQL"
+    }
+  },
+  "usDescSection": {
+    "title": "About Us",
+    "description1": "On StWar Studios, we specialize in custom software development based on your needs, including websites, integrations, automation, and more, leveraging new technologies to deliver innovative solutions.",
+    "description2": "Our commitment to high human value means we put both you and our collaborators first, fostering the growth and professional development of every team member.",
+    "description3": "With a clear vision for the future, we aim to expand in Latin America and become a reference in the technology sector. We distinguish ourselves by our responsibility, integrity, and commitment to quality, ensuring your satisfaction and trust in all our services.",
+    "closingStatement": "We are here to accompany you and grow together!"
+  },
+  "valuesDescSection": {
+    "title": "Our values",
+    "values": [
+      {
+        "title": "Integrity",
+        "description": "We are responsible and ethical in our actions, services, and products.",
+        "icon": "shield",
+        "color": "#6D31ED"
+      },
+      {
+        "title": "Passion",
+        "description": "We put our heart into every task. We are excited by coding, design, and planning.",
+        "icon": "heart",
+        "color": "#f04cc4"
+      },
+      {
+        "title": "Discipline",
+        "description": "We are constant, punctual, focused, and organized in our activities.",
+        "icon": "hourglass",
+        "color": "#f9623e"
+      },
+      {
+        "title": "Commitment",
+        "description": "We give our all, voluntarily and passionately.",
+        "icon": "handshake",
+        "color": "#3787cf"
+      }
+    ]
+  },
+  "contactSection": {
+    "title": "The incredible begins here",
+    "subtitle": "It's time to build the future you once imagined.",
+    "contactTitle": "Get in touch",
+    "contactDescription": "Leave us your details and we’ll be happy to work with you.",
+    "contactDescription2" : "Our team is always attentive and ready to offer you the best solution to your technological needs",
+    "email": "contact@stwarstudios.com",
+    "phone": "(+57) 316 9352239",
+    "writeToUs": "Write to us",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Your phone number",
+      "topic": "Topic",
+      "message": "Your message",
+      "submit": "Submit",
+      "loading": "Sending..."
+    },
+    "errors": {
+      "name": "Please enter your Name.",
+      "email": "Please enter a valid Email.",
+      "phone": "Please enter a valid Phone number.",
+      "topic": "Please enter a Topic of interest.",
+      "message": "Please enter a Message, we want to hear from you.",
+      "api": "There was an issue sending the form. Please try again later."
+    },
+    "success": "Sent successfully! We will get in touch with you soon."
+  },
+  "navbar": {
+    "contactButton":  "Contact Us",
+    "servicesSection": "Services",
+    "techStackSection": "Tech stack",
+    "valuesSection": "Values"
+  }
+}
