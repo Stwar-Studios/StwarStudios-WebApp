@@ -1,0 +1,110 @@
+{
+  "videoShowcase": {
+    "homeTitle": "Avanza al futuro tecnológico",
+    "homeSubTitle": "Empodera tu negocio con las mejores e innovadoras soluciones tecnológicas",
+    "contactButton": "Contáctanos",
+    "servicesArrowTitle": "servicios",
+    "htmlVideoFallback": "Tu navegador no soporta video HTML5."
+  },
+  "servicesSection": {
+    "title": "Nuestros Servicios",
+    "services": [
+      {
+        "title": "Soluciones Personalizadas",
+        "description": "Creación de software conforme a tus necesidades, digitalización de tus procesos para transformar tu negocio, incluyendo automatización de tareas manuales, y más.",
+        "button": "Más Información"
+      },
+      {
+        "title": "Integración con Nuevas Tecnologías",
+        "description": "Implementación y adaptación de tecnologías emergentes para modernizar tus sistemas existentes así como migración a la nube para escalamiento y mejora de la eficiencia operativa.",
+        "button": "Más Información"
+      }
+    ]
+  },
+  "companyDescSection": {
+    "title": "Más que una solución, un aliado",
+    "description": "El éxito de tu negocio es nuestra mayor prioridad, por eso queremos ser tu aliado estratégico, ajustándonos a tus necesidades específicas. Trabajamos contigo para entender tus desafíos únicos y ofrecerte el apoyo necesario para superarlos. Con nuestra colaboración cercana, potenciamos tu crecimiento y optimizamos tus procesos. Juntos, alcanzamos tus objetivos."
+  },
+  "techStackSection": {
+    "title": "Nuestro stack tecnológico",
+    "technologies": {
+      "blazor": "Blazor",
+      "azure": "Microsoft Azure",
+      "dotnet": ".NET",
+      "react": "React",
+      "angular": "Angular",
+      "sql": "MS SQL / Azure SQL"
+    }
+  },
+  "usDescSection": {
+    "title": "Nosotros",
+    "description1": "En StWar Studios, nos dedicamos al desarrollo de sistemas informáticos conforme a tus necesidades, incluyendo páginas web, integraciones, automatizaciones y demás, aprovechando las nuevas tecnologías para brindarte soluciones innovadoras.",
+    "description2": "Nuestro compromiso con un alto valor humano significa que ponemos en primer lugar tanto a ti como a nuestros colaboradores, promoviendo el crecimiento y desarrollo profesional de cada miembro de nuestro equipo.",
+    "description3": "Con una clara visión de futuro, buscamos expandirnos en Latinoamérica y convertirnos en un referente en el sector tecnológico. Nos distinguimos por nuestra responsabilidad, integridad y compromiso con la calidad, asegurando así tu satisfacción y confianza en todos nuestros servicios.",
+    "closingStatement": "¡Estamos aquí para acompañarte y crecer juntos!"
+  },
+  "valuesDescSection": {
+    "title": "Nuestros valores",
+    "values": [
+      {
+        "title": "Integridad",
+        "description": "Somos responsables y éticos en nuestras acciones, servicios y productos.",
+        "icon": "shield",
+        "color": "#6D31ED"
+      },
+      {
+        "title": "Pasión",
+        "description": "Dejamos nuestro corazón en cada tarea. Nos emocionan los códigos, el diseño y la planeación.",
+        "icon": "heart",
+        "color": "#f04cc4"
+      },
+      {
+        "title": "Disciplina",
+        "description": "Somos constantes, puntuales, enfocados y organizados en nuestras actividades.",
+        "icon": "hourglass",
+        "color": "#f9623e"
+      },
+      {
+        "title": "Compromiso",
+        "description": "Damos todo por el todo de manera voluntaria y apasionada.",
+        "icon": "handshake",
+        "color": "#3787cf"
+      }
+    ]
+  },
+  "contactSection": {
+    "title": "Lo increíble comienza aquí",
+    "subtitle": "Es momento de construir el futuro que una vez te imaginaste.",
+    "writeUs" : "Write us!",
+    "contactTitle": "Ponte en contacto",
+    "contactDescription": "Déjanos tus datos y estaremos encantados de trabajar contigo.",
+    "contactDescription2": "Nuestro equipo está siempre atento y dispuesto a ofrecerte la mejor solución a tus necesidades tecnológicas.",
+    "email": "contact@stwarstudios.com",
+    "phone": "(+57) 316 9352239",
+    "writeToUs": "Escríbenos",
+    "form": {
+      "name": "Nombres",
+      "email": "Correo electrónico",
+      "phone": "Número de teléfono",
+      "topic": "Título",
+      "message": "Tu mensaje",
+      "submit": "Enviar",
+      "loading": "Enviando..."
+    },
+    "errors": {
+      "name": "Por favor, escriba su Nombre.",
+      "email": "Por favor, escriba un Correo válido.",
+      "phone": "Por favor, escriba un Teléfono válido.",
+      "topic": "Por favor, escriba un Tema de interés.",
+      "message": "Por favor, escriba un Mensaje, queremos leerte.",
+      "api": "Hubo un problema al enviar el formulario. Por favor, inténtalo más tarde."
+    },
+    "success": "¡Enviado con éxito! Pronto nos pondremos en contacto contigo."
+  },
+  "navbar": {
+    "contactButton":  "Contáctanos",
+    "servicesSection": "Servicios",
+    "techStackSection": "Stack Tecnológico",
+    "valuesSection": "Valores"
+  }
+}
