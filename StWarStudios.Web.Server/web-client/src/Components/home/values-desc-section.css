@@ -16,13 +16,13 @@
   
   .desc-content {
     gap: 2.0rem;
-    padding: 2.0rem;
+    padding: 2.0em 6em;
     display: flex;
     flex-wrap: wrap;
     flex: 1;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     
   }
   
@@ -49,11 +49,11 @@
   
   .value-body {
     height: 40%;
+    text-align: center;
   }
   
 
-  @media (max-width: 1900px) {
-
+@media (max-width: 1900px) {
     .values-desc {
       padding: 0rem;
       margin-left: 4em;
@@ -61,12 +61,15 @@
     }
 
     .desc-content {
-      padding: 0;
-      margin-top: 7em;
+      padding: 2.0em 6em; 
     }
-  }
+}
 
-  
+@media (max-width: 1200px) {
+    .desc-content {
+      padding: 0.0em 0em;
+    }
+}
   @media (max-width: 690px) {
     .values-item {
       margin-top: 5em;
@@ -80,7 +83,7 @@
       margin-bottom: 0em;
     }
     .desc-content {
-      padding: 0;
+      padding: 0.0em 0em !important;
       margin-top: 3em;
       flex-direction: column;
       justify-content: center;

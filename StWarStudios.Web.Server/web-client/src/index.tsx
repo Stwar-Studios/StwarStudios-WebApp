@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import './i18n/i8n';
+import { TranslationProvider } from './Components/translation-provider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <TranslationProvider>
+        <App />
+      </TranslationProvider>
     </Router>
   </React.StrictMode>
 );

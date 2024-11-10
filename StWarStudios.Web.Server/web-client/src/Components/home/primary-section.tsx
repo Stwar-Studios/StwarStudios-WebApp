@@ -1,6 +1,7 @@
 import "./primary-section.css"
 import { scroller } from 'react-scroll';
 import { FaAngleDown  } from 'react-icons/fa';
+import { useTranslations  } from '../translation-provider';
 
 const scrollToSection = (section : string) => {
     scroller.scrollTo(section, {
@@ -11,26 +12,31 @@ const scrollToSection = (section : string) => {
   };
 
 function PrimarySection()
-{
+{  
+  const { videoShowcase } = useTranslations();
+  const { homeTitle, homeSubTitle, contactButton, servicesArrowTitle, htmlVideoFallback } = videoShowcase;
  return <>
     <section className="video-showcase">
-        <video autoPlay muted loop id="background-video">
-          <source src="/images/hologram_1.mp4" type="video/mp4" />
-          Tu navegador no soporta video HTML5.
-        </video>
-        <div className="video-overlay"></div>
-        <div className="content">
-          <h2 className="home-title">Avanza al futuro tecnológico</h2>
-          <h3 className="home-sub-title mb-4 text-wrap">Empodera tu negocio con las mejores e innovadoras soluciones tecnol&oacute;gicas</h3>
-          <div className="video-button">
-            {/* <Button variant='outline-light' className="stw-btn-primary" onClick={() =>scrollToSection('services')} >M&aacute;s informaci&oacute;n</Button> */}
-            <a href="#contact-section" className="video-button" onClick={() =>scrollToSection('contact-section')}>Contact Us</a>
-          </div>
-        </div>      
-        <div  className="arrow-down">
-          <a title="services" href="#services" onClick={() =>scrollToSection('services')}><FaAngleDown  size={30}/></a>
+      <video autoPlay muted loop id="background-video">
+        <source src="/images/hologram_1.mp4" type="video/mp4" />
+        {htmlVideoFallback}
+      </video>
+      <div className="video-overlay"></div>
+      <div className="content">
+        <h2 className="home-title">{homeTitle}</h2>
+        <h3 className="home-sub-title mb-4 text-wrap">{homeSubTitle}</h3>
+        <div className="video-button">
+          <a href="#contact-section" className="video-button" onClick={() => scrollToSection('contact-section')}>
+            {contactButton}
+          </a>
         </div>
-    </section>      
+      </div>
+      <div className="arrow-down">
+        <a title={servicesArrowTitle} href="#services" onClick={() => scrollToSection('services')}>
+          <FaAngleDown size={30} />
+        </a>
+      </div>
+    </section>   
   </>;
 }
 
