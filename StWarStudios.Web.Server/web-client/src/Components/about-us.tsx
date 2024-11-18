@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 const AboutUs = () => {
   return (
     <>
-      {/* Primera sección */}
       <motion.div
         className="about-us-container"
         initial={{ opacity: -1 }}
@@ -42,7 +41,6 @@ const AboutUs = () => {
         </div>
       </motion.div>
 
-      {/* Segunda sección */}
       <div className="about-us-extra-section">
         <div className="cards-container">
           <motion.div
@@ -98,7 +96,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Tercera sección: Carrusel */}
       <div className="carousel-section">
         <motion.div
           className="carousel-container"
