@@ -184,9 +184,9 @@
     padding: 60px 20px;
     text-align: center;
     background-color: #000000;
-}
-
-.carousel-container {
+  }
+  
+  .carousel-container {
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -194,31 +194,96 @@
     margin: 0 auto;
     margin-top: -4%;
     margin-bottom: -3%;
-}
-
-.carousel {
+  }
+  
+  .carousel {
     display: flex;
     flex-direction: row;
     gap: 5px;
-    animation: scroll 100s linear infinite;
-}
-
-.carousel-image {
+    animation: scroll 60s linear infinite;
+  }
+  
+  .carousel-image {
     min-width: 300px;
     max-width: 100%;
     height: 200px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-}
-
-@keyframes scroll {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  .carousel-image:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); 
+  }
+  
+  @keyframes scroll {
     0% {
-        transform: translateX(0);
+      transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+      transform: translateX(-100%);
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-image {
+      min-width: 200px;
+      height: 150px;
+    }
+  }
+  
+.about-us-values {
+    background-color: #000000;
+    padding: 20px 0;
+    width: 100%;
+    margin: 0%;
+  }
+  
+  .about-us-values .values-item {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    height: 270px !important;
+  }
+  
+  .about-us-values .values-item h2 {
+    color: #bab8b8;
+    margin: 10px 0;
+    font-size: 1.6rem;
+  }
+  
+  .about-us-values .values-item .value-body {
+    font-size: 1rem;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  
+  .about-us-values .values-item .img {
+    width: 40px;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+  .about-us-values h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  
+  
+  .about-us-values .desc-content .values-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+  }
+  
 
 @media (max-width: 1024px) {
     .about-us-main-title {

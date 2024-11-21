@@ -1,6 +1,7 @@
 import './about-us.css';
 import React from 'react';
 import { motion } from 'framer-motion';
+import ValuesDescSection from './home/values-desc-section';
 
 const AboutUs = () => {
   return (
@@ -56,10 +57,9 @@ const AboutUs = () => {
               className="extra-section-image"
             />
             <p className="extra-section-text">
-              Nuestra misión es transformar ideas innovadoras en soluciones tecnológicas de vanguardia, brindando servicios
-              integrales de ingeniería de software, diseño gráfico y desarrollo de aplicaciones. Nos comprometemos a ofrecer
-              productos y servicios de alta calidad que potencien la productividad y creatividad de nuestros clientes,
-              impulsando su éxito en un mundo digital en constante evolución.
+              Nuestra misión es transformar ideas innovadoras en soluciones tecnológicas de vanguardia, brindando servicios integrales de ingeniería de software,
+              diseño gráfico y desarrollo de aplicaciones. Nos compremetemos a ofrecer productos y servicios de alta calidad que potencien la productividad y 
+              creatividad de nuestros clientes, impulsando su éxito en un mundo digital en constante evolución.
             </p>
             <img
               src="/images/vision.png"
@@ -81,11 +81,10 @@ const AboutUs = () => {
               className="extra-section-image"
             />
             <p className="extra-section-text">
-              Nuestra visión es ser líderes en la industria tecnológica, reconocidos por nuestra capacidad de fusionar
-              creatividad y tecnología para ofrecer soluciones únicas y personalizadas. Aspiramos a crear un impacto
-              positivo en la sociedad, facilitando la transformación digital de empresas y personas a través de nuestras
-              innovadoras soluciones de software y diseño gráfico. Queremos ser el socio preferido de nuestros clientes,
-              ayudándolos a alcanzar sus objetivos mediante la excelencia y la innovación constante.
+              Nuestra visión es ser líderes en la industria tecnológica, reconocidos por nuestra capacidad de fusionar creatividad y tecnología, reconocidos por nuestra
+              capacidad de fusionar creatividad y tecnología para ofrecer soluciones únicas y personalizadas. Aspiramos a crear un impacto positivo en la sociedad,
+              facilitando la transformación digital de empresas y personas a través de nuestras innovadoras soluciones de software y diseño gráfico. Queremos ser el
+              socio preferido de nuestros clientes, ayudándolos a alcanzar sus objetivos mediante la excelencia y la innovación constante.
             </p>
             <img
               src="/images/Token.png"
@@ -96,10 +95,10 @@ const AboutUs = () => {
         </div>
       </div>
 
+      <ValuesDescSection className="about-us-values" />
+
       <div className="carousel-section">
-        <motion.div
-          className="carousel-container"
-        >
+        <motion.div className="carousel-container">
           <motion.div
             className="carousel"
             initial={{ x: 0 }}
@@ -121,7 +120,7 @@ const AboutUs = () => {
             <img src="/images/carrusel8.jpg" alt="Imagen 8" className="carousel-image" />
             <img src="/images/carrusel9.jpg" alt="Imagen 9" className="carousel-image" />
             <img src="/images/carrusel10.jpg" alt="Imagen 10" className="carousel-image" />
-            
+
             <img src="/images/carrusel1.jpg" alt="Imagen 1" className="carousel-image" />
             <img src="/images/carrusel2.jpg" alt="Imagen 2" className="carousel-image" />
             <img src="/images/carrusel3.jpg" alt="Imagen 3" className="carousel-image" />
@@ -140,3 +139,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
