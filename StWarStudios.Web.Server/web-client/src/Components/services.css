@@ -1,69 +1,226 @@
 .services-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
-  
-  .services-background-image {
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: -7%;
-    z-index: -1;
-  }
-  
-  .services-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin-top: -7%;
-    height: 120%;
-    background: rgba(0, 0, 0, 0.718); 
-    z-index: 1;
-  }
-  
-  .services-title-container {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.services-background-image {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -7%;
+  z-index: -1;
+}
+
+.services-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-top: -7%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.718);
+  z-index: 1;
+}
+
+.services-title-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.services-main-title {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Lexend', sans-serif;
+  font-weight: bold;
+  margin-top: 5%;
+}
+
+.services-main-subtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  font-family: 'Lexend', sans-serif;
+  margin: 40px;
+  margin-top: 10%;
+  text-align: center !important;
+}
+
+.custom-services-wrapper {
+  padding: 40px 20px;
+  background-color: #1c1c1c;
+  color: #fff;
+  text-align: center;
+}
+
+.tech-title {
+  font-size: 2rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Lexend', sans-serif; 
+}
+
+.tech-cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 30px;
+  justify-content: center; 
+  padding: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.tech-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 450px; 
+  padding: 30px;
+  display: flex; 
+  align-items: center; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tech-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 15px; 
+}
+
+.node1-image {
+  width: 100px; 
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px; 
+  font-family: 'Lexend', sans-serif;
+  margin-right: 15px;
+}
+
+.tech-text {
+  flex: 1; 
+  text-align: left; 
+  display: flex;
+  flex-direction: column; 
+  font-family: 'Lexend', sans-serif;
+  justify-content: flex-start; 
+}
+
+.tech-name {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: black;
+}
+
+.tech-description {
+  font-size: 1rem;
+  color: #4f4f4f;
+  margin-top: 5%;
+}
+
+@media (max-width: 1024px) {
   .services-main-title {
-    font-size: 3rem;
-    color: rgb(6, 139, 234);
-    font-family: 'Lexend', sans-serif;
-    margin-bottom: 100px;
-    font-weight: bold;
-    margin-top: -5%;
+    font-size: 2.5rem;
   }
-  
+
   .services-main-subtitle {
-    font-size: 1.5rem;
-    color: #fff;
-    font-family: 'Lexend', sans-serif;
-    margin: 40px;
-    text-align: center !important;
+    font-size: 1.3rem;
+    margin: 20px;
   }
-  
-  .services-button {
-    background-color: transparent;
-    color: white;
-    padding: 10px 20px;
+
+  .tech-cards-container {
+    grid-template-columns: 1fr 1fr;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .tech-card {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .tech-name {
+    font-size: 1.1rem;
+  }
+
+  .tech-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-main-title {
+    font-size: 2rem;
+  }
+
+  .services-main-subtitle {
     font-size: 1.2rem;
-    border: 5px solid #6f42c1;
-    border-radius: 10px;
-    font-family: 'Lexend', sans-serif;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    margin: 20px;
   }
+
+  .tech-cards-container {
+    grid-template-columns: 1fr;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .tech-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .tech-name {
+    font-size: 1rem;
+  }
+
+  .tech-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-main-title {
+    font-size: 1.5rem;
+  }
+
+  .services-main-subtitle {
+    font-size: 1rem;
+    margin: 15px;
+  }
+
+  .tech-cards-container {
+    grid-template-columns: 1fr;
+    margin-right: 3%;
+    margin-left: 3%;
+  }
+
+  .tech-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .tech-name {
+    font-size: 0.9rem;
+  }
+
+  .tech-description {
+    font-size: 0.8rem;
+  }
+}
+
+
   
-  .services-button:hover {
-    background-color: #6f42c1;
-  }
   
