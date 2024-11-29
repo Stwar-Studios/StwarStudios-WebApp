@@ -1,9 +1,16 @@
 import './about-us.css';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import ValuesDescSection from './home/values-desc-section';
 
 const AboutUs = () => {
+  const navigate = useNavigate(); 
+
+  const handleButtonClick = () => {
+    navigate('/contact'); 
+  };
+
   return (
     <>
       <motion.div
@@ -36,64 +43,51 @@ const AboutUs = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 2.5, delay: 1 }}
+            onClick={handleButtonClick} 
           >
             ¡Vamos a trabajar juntos!
           </motion.button>
         </div>
       </motion.div>
 
-      <div className="about-us-extra-section">
-        <div className="cards-container">
-          <motion.div
-            className="about-us-mission card"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 4 }}
-          >
-            <h2 className="extra-section-title">Nuestra Misión</h2>
-            <img
-              src="/images/line purple.png"
-              alt="Nuestra misión"
-              className="extra-section-image"
-            />
-            <p className="extra-section-text">
-              Nuestra misión es transformar ideas innovadoras en soluciones tecnológicas de vanguardia, brindando servicios integrales de ingeniería de software,
-              diseño gráfico y desarrollo de aplicaciones. Nos compremetemos a ofrecer productos y servicios de alta calidad que potencien la productividad y 
-              creatividad de nuestros clientes, impulsando su éxito en un mundo digital en constante evolución.
-            </p>
-            <img
-              src="/images/vision.png"
-              alt="mision"
-              className="extra-section-bottom-image"
-            />
-          </motion.div>
+      <div className="cards-container">
+  <div className="card">
+    <div className="extra-section-text-container">
+      <h2 className="extra-section-title">Misión</h2>
+      <p className="extra-section-text">
+        Nuestra misión es transformar ideas innovadoras en soluciones tecnológicas de vanguardia, 
+        brindando servicios integrales de ingeniería de software, diseño gráfico y desarrollo de aplicaciones.
+        Nos comprometemos a ofrecer productos y servicios de alta calidad que potencien la productividad y 
+        creatividad de nuestros clientes, impulsando su éxito en un mundo digital en constante evolución.
+      </p>
+    </div>
+    <img
+      src="/images/vision.png"
+      alt="Misión"
+      className="extra-section-bottom-image"
+    />
+  </div>
 
-          <motion.div
-            className="about-us-vision card"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 4 }}
-          >
-            <h2 className="extra-section-title">Nuestra Visión</h2>
-            <img
-              src="/images/line blue.png"
-              alt="Visión de la empresa"
-              className="extra-section-image"
-            />
-            <p className="extra-section-text">
-              Nuestra visión es ser líderes en la industria tecnológica, reconocidos por nuestra capacidad de fusionar creatividad y tecnología, reconocidos por nuestra
-              capacidad de fusionar creatividad y tecnología para ofrecer soluciones únicas y personalizadas. Aspiramos a crear un impacto positivo en la sociedad,
-              facilitando la transformación digital de empresas y personas a través de nuestras innovadoras soluciones de software y diseño gráfico. Queremos ser el
-              socio preferido de nuestros clientes, ayudándolos a alcanzar sus objetivos mediante la excelencia y la innovación constante.
-            </p>
-            <img
-              src="/images/Token.png"
-              alt="vision"
-              className="extra-section-bottom-image"
-            />
-          </motion.div>
-        </div>
-      </div>
+  <div className="card">
+    <div className="extra-section-text-container">
+      <h2 className="extra-section-title">Visión</h2>
+      <p className="extra-section-text">
+        Nuestra visión es ser líderes en la industria tecnológica, reconocidos por nuestra capacidad 
+        de fusionar creatividad y tecnología para ofrecer soluciones únicas y personalizadas. Aspiramos a
+        crear un impacto positivo en la sociedad, facilitando la transformación digital de empresas y
+        empresas y personas a através de neustras innovadoras soluciones de software y diseño gráfico.
+        Queremos ser el socio preferido de neustros clientes, ayudándolos a alcanzar sus objetivos mediante
+        la excelencia y la innovación constante.
+      </p>
+    </div>
+    <img
+      src="/images/Token.png"
+      alt="Visión"
+      className="extra-section-bottom-image"
+    />
+  </div>
+</div>
+
 
       <ValuesDescSection className="about-us-values" />
 
@@ -139,4 +133,5 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
 
