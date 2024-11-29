@@ -1,11 +1,10 @@
-// App.tsx
 import React from 'react';
 import './App.css';
 import 'reset-css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Components/homepage';
 import NavBar from './Components/navbar';
-// import ContactComponent from './Components/Contact';
+import Contact from './Components/Contact';
 import Services from './Components/Services';
 // import Portafolio from './Components/Portafolio';
 import Footer from './Footer'; 
@@ -20,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} /> 
-          <Route path="/services" element={<Services />} /> 
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} /> 
         </Routes>
         <Footer />
       </div>
